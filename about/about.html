@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -8,14 +7,17 @@
     <title> Noman Ahmad </title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="about.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
     <!-- SECTION: HEADER -->
     <div class="n-header">
     </div>
     <div class="n-title">
         <h1> Noman Ahmad </h1>
+        <div class="email">
+            <a href="mailto:noman.ahmad@uga.edu">noman.ahmad@uga.edu</a>
+        </div>
     </div>
     <!-- SECTION: AUTHORS -->
     <div class="n-byline">
@@ -28,6 +30,14 @@
         <div class="image-text">
             <div class="image-text--image">
                 <img src="media/image.jpg" class="noman-image">
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                    <a href="https://github.com/YOUR_USERNAME" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
             </div>
             <div>
                 <p> <b> Hello and Welcome (السلام علیکم) </b> </p>
@@ -39,6 +49,48 @@
             </div>
         </div>
     </div>
-</body>
 
+    <style>
+        .email {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .email a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .email a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.95em;
+            padding: 5px 0;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links i {
+            width: 16px;
+            text-align: center;
+        }
+    </style>
+</body>
 </html>
