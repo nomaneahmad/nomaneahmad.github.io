@@ -19,9 +19,12 @@
     <!-- SECTION: AUTHORS -->
     <div class="n-byline">
         <div class="byline">
-            <a href="about.html">About</a>
-            <a href="research.html">Research</a>
-            <a href="teaching.html">Teaching</a>
+            <a href="about.html">ABOUT</a>
+            <span class="separator">|</span>
+            <a href="research.html">RESEARCH</a>
+            <span class="separator">|</span>
+            <a href="teaching.html">TEACHING</a>
+            <span class="separator">|</span>
             <a href="cv.html" target="_blank">CV</a>
         </div>
     </div>
@@ -52,7 +55,6 @@
             </div>
         </div>
     </div>
-
     <style>
         .email {
             margin-top: 10px;
@@ -60,23 +62,19 @@
             color: #666;
             text-align: center;
         }
-
         .email a {
             color: #0066cc;
             text-decoration: none;
         }
-
         .email a:hover {
             text-decoration: underline;
         }
-
         .social-links {
             margin-top: 15px;
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -86,15 +84,37 @@
             font-size: 0.85em;
             padding: 3px 0;
         }
-
         .social-links a:hover {
             text-decoration: underline;
         }
-
         .social-links i {
             width: 14px;
             text-align: center;
             font-size: 0.9em;
+        }
+        
+        .byline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .byline a {
+            color: #999;
+            text-decoration: none;
+            font-weight: normal;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+        }
+
+        .byline a:hover {
+            color: #333;
+        }
+
+        .separator {
+            color: #ccc;
+            font-weight: 300;
         }
     </style>
 </body>
