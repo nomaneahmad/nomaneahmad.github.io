@@ -10,6 +10,8 @@
     --larger-thumb-border-radius: 3px;
 }
 
+html { overflow-y: scroll; }
+
 html {
     background-color: #fafafc;
     font-size: 14px;
