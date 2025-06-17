@@ -40,15 +40,12 @@
             <div class="dropdown-content" id="dropdown1">
                 <div class="dropdown-links">
                     <a href="files/teaching_evaluations_fall2024.pdf" class="dropdown-link">
-                        <i class="fas fa-chart-bar"></i>
                         Teaching Evaluations
                     </a>
                     <a href="files/syllabus_econ2105_fall2024.pdf" class="dropdown-link">
-                        <i class="fas fa-file-alt"></i>
                         Syllabus
                     </a>
                     <a href="https://www.dropbox.com/your-slides-fall2024-link" class="dropdown-link" target="_blank">
-                        <i class="fas fa-presentation"></i>
                         Course Slides
                     </a>
                 </div>
@@ -63,15 +60,12 @@
             <div class="dropdown-content" id="dropdown2">
                 <div class="dropdown-links">
                     <a href="files/teaching_evaluations_fall2023.pdf" class="dropdown-link">
-                        <i class="fas fa-chart-bar"></i>
                         Teaching Evaluations
                     </a>
                     <a href="files/syllabus_econ2105_fall2023.pdf" class="dropdown-link">
-                        <i class="fas fa-file-alt"></i>
                         Syllabus
                     </a>
                     <a href="https://www.dropbox.com/your-slides-fall2023-link" class="dropdown-link" target="_blank">
-                        <i class="fas fa-presentation"></i>
                         Course Slides
                     </a>
                 </div>
@@ -132,34 +126,23 @@
         
         /* Dropdown Styles */
         .dropdown-item {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
             transition: all 0.3s ease;
-        }
-        
-        .dropdown-item:hover {
-            border-color: #ccc;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .dropdown-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
             cursor: pointer;
-            background: #fafafa;
             transition: background-color 0.2s ease;
         }
         
         .dropdown-header:hover {
-            background: #f0f0f0;
+            background: rgba(0,0,0,0.02);
         }
         
         .dropdown-header p {
             margin: 0;
-            font-weight: 500;
             color: #333;
         }
         
@@ -185,19 +168,15 @@
         }
         
         .dropdown-links {
-            padding: 20px;
-            border-top: 1px solid #e0e0e0;
+            padding: 10px 0;
         }
         
         .dropdown-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 15px;
-            margin-bottom: 8px;
+            display: block;
+            padding: 8px 20px;
+            margin-bottom: 4px;
             text-decoration: none;
             color: #555;
-            border-radius: 6px;
             transition: all 0.2s ease;
             font-size: 0.95em;
         }
@@ -207,9 +186,8 @@
         }
         
         .dropdown-link:hover {
-            background: #f8f9fa;
             color: #333;
-            transform: translateX(5px);
+            background: rgba(0,0,0,0.02);
         }
         
         .dropdown-link i {
