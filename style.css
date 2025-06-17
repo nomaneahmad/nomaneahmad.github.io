@@ -14,7 +14,7 @@ html { overflow-y: scroll; }
 
 html {
     background-color: #fafafc;
-    font-size: 18px !important;
+    font-size: 14px !important;
     line-height: 1.6;
     font-family: Arcon;
     text-size-adjust: 100%;
@@ -24,7 +24,7 @@ html {
 
 @media(min-width: 768px) {
     html {
-        font-size: 18px;
+        font-size: 18px !important;
     }
 }
 
