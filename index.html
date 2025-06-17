@@ -6,7 +6,7 @@
     <link href="../media/favicon-196x196.png" rel="shortcut icon" />
     <title> Noman Ahmad </title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -34,8 +34,8 @@
             <div class="image-text--image">
                 <img src="media/image.jpg" class="noman-image">
                 <div class="social-links">
-            <a href="mailto:noman.ahmad@uga.edu" target="_blank"> 
-                <i class="fa-solid fa-envelope"></i> Email
+                    <a href="#" onclick="showEmailPopup()" class="email-link"> 
+                        <i class="fa-solid fa-envelope"></i> Email
                     </a>
                     <a href="https://scholar.google.com/citations?user=vijxO_sAAAAJ&hl=en&authuser=1" target="_blank">
                         <i class="fas fa-graduation-cap"></i> Google Scholar
@@ -53,10 +53,34 @@
                 <p> My research focuses on applied economics with a focus on development, health, and education. My pre-doctoral work focuses on the political economy of development, and the impact of shocks on informal institutions. </p>
                 <p>I am currently on the 2025-2026 job market. </p>
                 <p>Please click here to access my CV. </p>
-
             </div>
         </div>
     </div>
+
+    <!-- Email Popup Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Contact Email</h3>
+            <div class="email-options">
+                <a href="mailto:noman.ahmad@uga.edu" class="email-option">
+                    <i class="fa-solid fa-university"></i>
+                    <div>
+                        <strong>UGA Email</strong>
+                        <p>noman.ahmad@uga.edu</p>
+                    </div>
+                </a>
+                <a href="mailto:nomanecon@gmail.com" class="email-option">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Gmail</strong>
+                        <p>nomanecon@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <style>
         .email {
             margin-top: 10px;
@@ -91,9 +115,9 @@
             text-decoration: underline;
         }
         .social-links i {
-            width: 16px;  /* ← Slightly wider for better alignment */
+            width: 16px;
             text-align: center;
-            font-size: 1em;  /* ← Make icons same size as text */
+            font-size: 1em;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -122,6 +146,126 @@
             color: #ccc;
             font-weight: 300;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .email-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .email-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .email-option:hover {
+            border-color: #0066cc;
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,102,204,0.2);
+        }
+
+        .email-option i {
+            font-size: 20px;
+            color: #0066cc;
+            width: 24px;
+            text-align: center;
+        }
+
+        .email-option div {
+            flex: 1;
+        }
+
+        .email-option strong {
+            display: block;
+            margin-bottom: 2px;
+            color: #333;
+        }
+
+        .email-option p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .email-link {
+            cursor: pointer;
+        }
     </style>
+
+    <script>
+        function showEmailPopup() {
+            document.getElementById('emailModal').style.display = 'block';
+        }
+
+        // Close modal when clicking the X
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('emailModal');
+            const closeBtn = document.getElementsByClassName('close')[0];
+            
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+            
+            // Close modal when clicking outside of it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
