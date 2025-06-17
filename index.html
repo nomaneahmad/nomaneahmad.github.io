@@ -85,14 +85,18 @@
             text-decoration: none;
             font-size: 0.75em;
             padding: 3px 0;
+            line-height: 1.2
         }
         .social-links a:hover {
             text-decoration: underline;
         }
         .social-links i {
-            width: 14px;
+            width: 16px;  /* ← Slightly wider for better alignment */
             text-align: center;
-            font-size: 0.9em;
+            font-size: 1em;  /* ← Make icons same size as text */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .byline {
