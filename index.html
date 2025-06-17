@@ -6,7 +6,7 @@
     <link href="../media/favicon-196x196.png" rel="shortcut icon" />
     <title> Noman Ahmad </title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -52,7 +52,18 @@
                 <p> I am a Ph.D. candidate in the John Munro Godfrey, Sr. Department of Economics at the Terry College of Business, University of Georgia. </p>
                 <p> My research focuses on applied economics with a focus on development, health, and education. My pre-doctoral work focuses on the political economy of development, and the impact of shocks on informal institutions. </p>
                 <p>I am currently on the 2025-2026 job market. </p>
-                <p>Please click here to access my CV. </p>
+                <p>Please click <a href="#" onclick="showCVModal()">here</a> to access my CV. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal cv-modal">
+        <div class="modal-content cv-modal-content">
+            <span class="close cv-close">&times;</span>
+            <h3>Curriculum Vitae</h3>
+            <div class="cv-container">
+                <embed src="files/cv.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
             </div>
         </div>
     </div>
@@ -67,7 +78,7 @@
                     <i class="fa-solid fa-university"></i>
                     <div>
                         <strong>UGA Email</strong>
-                        <p>noman@uga.edu</p>
+                        <p>noman.ahmad@uga.edu</p>
                     </div>
                 </a>
                 <a href="mailto:nomanecon@gmail.com" class="email-option">
@@ -243,6 +254,44 @@
         .email-link {
             cursor: pointer;
         }
+
+        /* CV Modal Styles */
+        .cv-modal .cv-modal-content {
+            width: 95%;
+            max-width: 900px;
+            height: 80vh;
+            max-height: 700px;
+            padding: 20px;
+        }
+
+        .cv-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .cv-container embed {
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .cv-modal .cv-modal-content {
+                width: 98%;
+                height: 90vh;
+                margin: 5% auto;
+                padding: 15px;
+            }
+            
+            .cv-container {
+                height: calc(90vh - 120px);
+            }
+            
+            .cv-container embed {
+                height: 100%;
+            }
+        }
     </style>
 
     <script>
@@ -250,19 +299,31 @@
             document.getElementById('emailModal').style.display = 'block';
         }
 
+        function showCVModal() {
+            document.getElementById('cvModal').style.display = 'block';
+        }
+
         // Close modal when clicking the X
         document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('emailModal');
-            const closeBtn = document.getElementsByClassName('close')[0];
+            const emailModal = document.getElementById('emailModal');
+            const cvModal = document.getElementById('cvModal');
+            const closeBtns = document.getElementsByClassName('close');
             
-            closeBtn.onclick = function() {
-                modal.style.display = 'none';
+            // Handle all close buttons
+            for (let i = 0; i < closeBtns.length; i++) {
+                closeBtns[i].onclick = function() {
+                    emailModal.style.display = 'none';
+                    cvModal.style.display = 'none';
+                }
             }
             
             // Close modal when clicking outside of it
             window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
+                if (event.target == emailModal) {
+                    emailModal.style.display = 'none';
+                }
+                if (event.target == cvModal) {
+                    cvModal.style.display = 'none';
                 }
             }
         });
