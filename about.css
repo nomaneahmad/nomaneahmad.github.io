@@ -1,5 +1,5 @@
 .noman-image {
-    width: 120%;  /* ← Makes it slightly bigger */
+    width: 100%;  /* ← Makes it slightly bigger */
     object-fit: contain;
     border-radius: 60%;
     margin-left: 0;  /* ← Aligns it to the left like the social links */
