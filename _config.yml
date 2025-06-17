@@ -1,37 +1,10 @@
-# Jekyll configuration for GitHub Pages
+# Simple Jekyll configuration for GitHub Pages
 title: "Your Site Title"
 description: "Your site description"
-
-# Enable Jekyll processing
-markdown: kramdown
-highlighter: rouge
-
-# Plugins (GitHub Pages compatible)
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
 
 # Permalink structure (removes .html extensions)
 permalink: pretty
 
-# Collections and defaults
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-
-# Include files
-include:
-  - _pages
-
-# Exclude files from processing
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-
-# Build settings
-safe: true
-incremental: false
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-sitemap
