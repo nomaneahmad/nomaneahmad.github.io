@@ -32,12 +32,50 @@
     <div class="n-article">
         <h3>Instructor of Record</h3>
         
-        <div class="paper-item">
-            <p>Principles of Macroeconomics (ECON 2105) - Fall 2024</p>
+        <div class="paper-item dropdown-item">
+            <div class="dropdown-header" onclick="toggleDropdown('dropdown1')">
+                <p>Principles of Macroeconomics (ECON 2105) - Fall 2024</p>
+                <i class="fas fa-chevron-down dropdown-arrow" id="arrow1"></i>
+            </div>
+            <div class="dropdown-content" id="dropdown1">
+                <div class="dropdown-links">
+                    <a href="files/teaching_evaluations_fall2024.pdf" class="dropdown-link">
+                        <i class="fas fa-chart-bar"></i>
+                        Teaching Evaluations
+                    </a>
+                    <a href="files/syllabus_econ2105_fall2024.pdf" class="dropdown-link">
+                        <i class="fas fa-file-alt"></i>
+                        Syllabus
+                    </a>
+                    <a href="https://www.dropbox.com/your-slides-fall2024-link" class="dropdown-link" target="_blank">
+                        <i class="fas fa-presentation"></i>
+                        Course Slides
+                    </a>
+                </div>
+            </div>
         </div>
         
-        <div class="paper-item">
-            <p>Principles of Macroeconomics (ECON 2105) - Fall 2023</p>
+        <div class="paper-item dropdown-item">
+            <div class="dropdown-header" onclick="toggleDropdown('dropdown2')">
+                <p>Principles of Macroeconomics (ECON 2105) - Fall 2023</p>
+                <i class="fas fa-chevron-down dropdown-arrow" id="arrow2"></i>
+            </div>
+            <div class="dropdown-content" id="dropdown2">
+                <div class="dropdown-links">
+                    <a href="files/teaching_evaluations_fall2023.pdf" class="dropdown-link">
+                        <i class="fas fa-chart-bar"></i>
+                        Teaching Evaluations
+                    </a>
+                    <a href="files/syllabus_econ2105_fall2023.pdf" class="dropdown-link">
+                        <i class="fas fa-file-alt"></i>
+                        Syllabus
+                    </a>
+                    <a href="https://www.dropbox.com/your-slides-fall2023-link" class="dropdown-link" target="_blank">
+                        <i class="fas fa-presentation"></i>
+                        Course Slides
+                    </a>
+                </div>
+            </div>
         </div>
         
         <h3>Teaching Assistant</h3>
@@ -49,7 +87,6 @@
         <div class="paper-item">
             <p>Intermediate Macroeconomics (ECON 4020) - Spring 2023</p>
         </div>
-
         <div class="paper-item">
             <p>Economic Analysis for Business (EMBA 7010) - Fall 2022</p>
         </div>
@@ -62,7 +99,6 @@
             justify-content: center;
             gap: 12px;
         }
-
         .byline a {
             color: #999;
             text-decoration: none;
@@ -70,11 +106,9 @@
             letter-spacing: 2px;
             font-size: 1.5em;
         }
-
         .byline a:hover {
             color: #333;
         }
-
         .separator {
             color: #ccc;
             font-weight: 300;
@@ -89,14 +123,110 @@
             border-bottom: 2px solid #e0e0e0;
             font-weight: 600;
         }
-
         .paper-item {
             margin-bottom: 1rem;
         }
-
         .paper-item p {
             margin: 0;
         }
+        
+        /* Dropdown Styles */
+        .dropdown-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            border-color: #ccc;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+            background: #fafafa;
+            transition: background-color 0.2s ease;
+        }
+        
+        .dropdown-header:hover {
+            background: #f0f0f0;
+        }
+        
+        .dropdown-header p {
+            margin: 0;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .dropdown-arrow {
+            color: #666;
+            transition: transform 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .dropdown-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fff;
+        }
+        
+        .dropdown-content.open {
+            max-height: 200px;
+        }
+        
+        .dropdown-links {
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .dropdown-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #555;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 0.95em;
+        }
+        
+        .dropdown-link:last-child {
+            margin-bottom: 0;
+        }
+        
+        .dropdown-link:hover {
+            background: #f8f9fa;
+            color: #333;
+            transform: translateX(5px);
+        }
+        
+        .dropdown-link i {
+            color: #007bff;
+            width: 16px;
+            font-size: 0.9em;
+        }
     </style>
+    
+    <script>
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = document.getElementById('arrow' + dropdownId.slice(-1));
+            
+            dropdown.classList.toggle('open');
+            arrow.classList.toggle('rotated');
+        }
+    </script>
 </body>
 </html>
