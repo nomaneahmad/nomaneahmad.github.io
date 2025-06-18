@@ -10,22 +10,6 @@
     --larger-thumb-border-radius: 3px;
 }
 
-/* UGA Colors */
-:root {
-    --uga-red: #BA0C2F;
-    --uga-red-hover: rgba(186, 12, 47, 0.8);
-    --uga-red-shadow: rgba(186, 12, 47, 0.2);
-}
-
-/* Apply to all links */
-a {
-    color: var(--uga-red);
-}
-
-a:hover {
-    color: var(--uga-red-hover);
-}
-
 html { overflow-y: scroll; }
 
 html {
