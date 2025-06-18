@@ -202,7 +202,7 @@
         .dropdown-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start; 
             cursor: pointer;
             transition: background-color 0.2s ease;
             padding: 8px 0;
@@ -221,6 +221,8 @@
             color: #333;
             flex: 1;
             padding-right: 15px;
+	    line-height: 1.3em;
+
         }
         
         .dropdown-arrow {
@@ -228,6 +230,7 @@
             transition: transform 0.3s ease, color 0.2s ease;
             font-size: 0.9em;
             flex-shrink: 0;
+	    margin-top: 2px; 
         }
         
         .dropdown-arrow.rotated {
