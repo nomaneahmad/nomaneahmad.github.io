@@ -39,11 +39,14 @@
             </div>
             <div class="dropdown-content" id="dropdown1">
                 <div class="abstract">
-                    <p>[Draft Coming Soon]</p>
+		<p><em>[Draft Coming Soon]</em></p>
                 </div>
                 <div class="dropdown-links">
                     <a href="files/marital_endowments_mental_health.pdf" class="dropdown-link" left-align target="_blank">
                         <i class="fas fa-file-pdf"></i> Manuscript
+                    </a>
+                    <a href="#" class="dropdown-link" target="_blank">
+                        <i class="fas fa-podcast"></i> Podcast
                     </a>
                 </div>
             </div>
@@ -260,13 +263,13 @@
         
         .dropdown-links {
             padding: 0 20px 15px 20px;
-            text-align: center;
+            text-align: left; /* Changed from center to left */
         }
         
         .dropdown-link {
             display: inline-block;
             padding: 10px 20px;
-            margin: 5px;
+            margin: 5px 5px 5px 0; /* Removed left margin */
             text-decoration: none;
             color: #BA0C2F;
             border: 2px solid #BA0C2F;
@@ -282,17 +285,11 @@
             transform: translateY(-1px);
             box-shadow: 0 2px 4px rgba(186,12,47,0.2);
         }
-
-	.left-align {
-    	margin-left: 0;
-   	 text-align: left;
-    	float: left;	
-	}
         
         .dropdown-link i {
             margin-right: 6px;
-            width: 16px;
-            font-size: 0.9em;
+            width: 14px;
+            font-size: 0.8em;
         }
 
     </style>
