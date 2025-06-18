@@ -64,6 +64,7 @@
             <h3>Noman Ahmad | CV</h3>
             <div class="cv-container">
                 <embed src="files/cv.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+                <div class="cv-overlay"></div>
             </div>
         </div>
     </div>
@@ -74,11 +75,11 @@
             <span class="close">&times;</span>
             <h3>Contact Email</h3>
             <div class="email-options">
-                <a href="mailto:noman.ahmad@uga.edu" class="email-option">
+                <a href="mailto:noman@uga.edu" class="email-option">
                     <i class="fa-solid fa-university"></i>
                     <div>
                         <strong>UGA Email</strong>
-                        <p>noman@uga.edu</p>
+                        <p>noman.ahmad@uga.edu</p>
                     </div>
                 </a>
                 <a href="mailto:nomanecon@gmail.com" class="email-option">
@@ -306,12 +307,25 @@
             border: none;
             border-radius: 0;
             overflow: hidden;
+            position: relative;
         }
 
         .cv-container embed {
             border: none;
             width: 100%;
             height: 100%;
+            pointer-events: none;
+        }
+
+        .cv-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .cv-link {
@@ -355,6 +369,39 @@
                 if (event.target == cvModal) {
                     cvModal.style.display = 'none';
                 }
+            }
+
+            // Disable right-click context menu on CV
+            document.addEventListener('contextmenu', function(e) {
+                if (cvModal.style.display === 'block') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // Disable common keyboard shortcuts for downloading/printing
+            document.addEventListener('keydown', function(e) {
+                if (cvModal.style.display === 'block') {
+                    // Disable Ctrl+S (Save), Ctrl+P (Print), Ctrl+A (Select All)
+                    if (e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'a')) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    // Disable F12 (Developer Tools)
+                    if (e.key === 'F12') {
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+
+            // Disable text selection on CV
+            const cvContainer = document.querySelector('.cv-container');
+            if (cvContainer) {
+                cvContainer.style.userSelect = 'none';
+                cvContainer.style.webkitUserSelect = 'none';
+                cvContainer.style.mozUserSelect = 'none';
+                cvContainer.style.msUserSelect = 'none';
             }
         });
     </script>
