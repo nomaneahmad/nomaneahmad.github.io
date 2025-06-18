@@ -134,9 +134,10 @@
         .dropdown-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
             cursor: pointer;
             transition: background-color 0.2s ease;
+            padding: 8px 0;
         }
         
         .dropdown-header:hover {
@@ -150,12 +151,19 @@
         .dropdown-header p {
             margin: 0;
             color: #333;
+            flex: 1;
+            padding-right: 15px;
+            line-height: 1.3em;
+            display: inline-block;
         }
         
         .dropdown-arrow {
             color: #666;
             transition: transform 0.3s ease, color 0.2s ease;
             font-size: 0.9em;
+            flex-shrink: 0;
+            line-height: 1.3em;
+            padding-top: 0.2em; /* Fine-tuning to match text line */
         }
         
         .dropdown-arrow.rotated {
