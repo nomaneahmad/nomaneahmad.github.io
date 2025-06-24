@@ -30,7 +30,32 @@
     </div>
     <!-- SECTION: MAIN BODY -->
     <div class="n-article">
+        
         <h3>Instructor of Record</h3>
+        
+        <!-- Student Testimonials Section -->
+        <div class="testimonials-section">
+            <div class="testimonial-header" onclick="toggleTestimonials()">
+                <h4>Selected Student Evaluations</h4>
+                <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
+            </div>
+            <div class="testimonial-content-wrapper" id="testimonial-wrapper">
+                <div class="testimonial-carousel">
+                    <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-container">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text" id="testimonial-text"></p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
         
         <div class="paper-item dropdown-item">
             <div class="dropdown-header" onclick="toggleDropdown('dropdown1')">
@@ -89,6 +114,22 @@
     </div>
     
     <style>
+        h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 1rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 600;
+        }
+        .paper-item {
+            margin-bottom: 1rem;
+        }
+        .paper-item p {
+            margin: 0;
+        }
+        
         .byline {
             display: flex;
             align-items: center;
@@ -110,20 +151,117 @@
             font-weight: 300;
         }
         
-        h3 {
-            font-size: 1.4em;
-            color: #333;
-            margin-top: 1rem;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e0e0e0;
-            font-weight: 600;
-        }
-        .paper-item {
+        /* Testimonials Section */
+        .testimonials-section {
             margin-bottom: 1rem;
+            padding: 0;
         }
-        .paper-item p {
+        
+        .testimonial-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-header h4 {
             margin: 0;
+            font-size: 1em;
+            color: #333;
+            font-weight: 400;
+        }
+        
+        .testimonial-arrow {
+            color: #666;
+            font-size: 1em;
+            margin-left: 10px;
+            transition: transform 0.3s ease, color 0.2s ease;
+        }
+        
+        .testimonial-header:hover .testimonial-arrow {
+            color: #BA0C2F;
+        }
+        
+        .testimonial-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .testimonial-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .testimonial-content-wrapper.open {
+            max-height: 300px;
+        }
+        
+        .testimonial-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .testimonial-container {
+            flex: 1;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+        
+        .testimonial-content {
+            background: #f9f9f9;
+            border-left: 4px solid #BA0C2F;
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .quote-icon {
+            color: #BA0C2F;
+            font-size: 1.5em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            font-size: 1.05em;
+        }
+        
+        .carousel-btn {
+            background: #BA0C2F;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(186, 12, 47, 0.2);
+            flex-shrink: 0;
+        }
+        
+        .carousel-btn:hover {
+            background: #8B0A24;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.3);
+        }
+        
+        .carousel-btn:active {
+            transform: scale(0.95);
         }
         
         /* Dropdown Styles */
@@ -163,7 +301,7 @@
             font-size: 0.9em;
             flex-shrink: 0;
             line-height: 1.3em;
-            padding-top: 0.2em; /* Fine-tuning to match text line */
+            padding-top: 0.2em;
         }
         
         .dropdown-arrow.rotated {
@@ -209,16 +347,92 @@
             width: 16px;
             font-size: 0.9em;
         }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonial-carousel {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+            }
+            
+            .testimonial-container {
+                min-height: 200px;
+            }
+            
+            .testimonial-content {
+                padding: 1rem;
+            }
+        }
     </style>
     
     <script>
         function toggleDropdown(dropdownId) {
             const dropdown = document.getElementById(dropdownId);
-            const arrow = document.getElementById('arrow' + dropdownId.slice(-1));
+            const arrow = document.getElementById('arrow' + dropdownId.replace('-', ''));
             
             dropdown.classList.toggle('open');
             arrow.classList.toggle('rotated');
         }
+        
+        function toggleTestimonials() {
+            const wrapper = document.getElementById('testimonial-wrapper');
+            const arrow = document.getElementById('testimonial-arrow');
+            
+            wrapper.classList.toggle('open');
+            arrow.classList.toggle('rotated');
+            
+            // Initialize testimonials when opened for the first time
+            if (wrapper.classList.contains('open')) {
+                displayTestimonial();
+            }
+        }
+        
+        // Testimonials data
+        const testimonials = [
+            "I think this whole class was really well done! I feel like I learned a lot from this class. Professor Ahmad definitely knows what he is talking about and does a wonderful job of explaining the course material. The presentations, and other materials were also very useful to look back over which I really appreciated because I know not all professors allow students to have the lecture slides.",
+            "I thought our professor did a good job of teaching the material and he is very knowledgeable on economics.",
+            "Professor Ahmad did an excellent job on helping us understand the material he was teaching with multiple example that were connected back to the real life making it a fun and interesting class. I looked forward to going to his class as he would always be willing to help and was always well in responding back with emails. He explained concepts multiple times if we did not get it the first time and his assignments aligned well with the content. I would definitely take him again. There was nothing I believed needed great improvement because everything was done well.",
+            "He was very informative but sometimes got off topic. The professor was very good and does not need any improvement.",
+            "He did a great job at making sure we knew everything that was necessary to know plus more! I think he could have mixed up the formats of lessons at times.",
+            "Did a good job at making sure students were participating and engaging with course material. Teaching style is a little hard to follow.",
+            "Used class time efficiently and challenged students to participate through class.",
+            "He was accessible outside of class and never made you feel bad for asking questions.",
+            "I really liked when there were real world examples, I think that when they were too complicated it was confusing though.",
+            "The professor was very accessible to students who needed help and/or had questions in class. He was very fair in grading and assignment timing. The only way I possibly see room for improvement is by being a little more engaging in presenting the material to students.",
+            "He did a very good job this semester, and I learned a lot.",
+            "This course was well taught and organized. The instructor randomly placed iClicker questions throughout his lectures, which forced attention to detail during lectures. This helped me further learn the information that was being taught in lectures. It can be improved upon by allowing multiple attempts for the end-of-chapter quizzes to further grasp the information in this course."
+        ];
+        
+        let currentTestimonial = 0;
+        
+        function displayTestimonial() {
+            document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
+        }
+        
+        function changeTestimonial(direction) {
+            currentTestimonial += direction;
+            
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            } else if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            }
+            
+            displayTestimonial();
+        }
+        
+        // Initialize testimonials when page loads (but don't display until opened)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove auto-initialization since testimonials start closed
+        });
+        
+        // Remove auto-rotation for professional appearance
     </script>
 </body>
 </html>
