@@ -31,14 +31,16 @@
     <!-- SECTION: MAIN BODY -->
     <div class="n-article">
         
-        <h3>Instructor of Record</h3>
-        
-        <!-- Student Testimonials Section -->
-        <div class="testimonials-section">
+        <div class="section-header">
+            <h3>Instructor of Record</h3>
             <div class="testimonial-header" onclick="toggleTestimonials()">
                 <h4>Selected Student Evaluations</h4>
                 <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
             </div>
+        </div>
+        
+        <!-- Student Testimonials Section -->
+        <div class="testimonials-section">
             <div class="testimonial-content-wrapper" id="testimonial-wrapper">
                 <div class="testimonial-carousel">
                     <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
@@ -157,13 +159,26 @@
             padding: 0;
         }
         
+        /* Section Header - contains both h3 and testimonial header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+        }
+        
+        .section-header h3 {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
         .testimonial-header {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            padding: 8px 0;
+            padding: 0;
             transition: all 0.3s ease;
             gap: 2px;
         }
