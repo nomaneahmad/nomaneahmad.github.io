@@ -390,12 +390,19 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            .testimonial-content-wrapper.open {
+                max-height: 350px; /* Add mobile-specific max-height for wrapper */
+            }
+            
             .testimonial-carousel {
-                height: 390px; /* Increased from 260px by 50% (260 * 1.5 = 390px) */
+                height: 300px; /* Reduced from 390px to a more reasonable height */
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
             }
             
             .testimonial-container {
-                height: 330px; /* Increased from 220px by 50% (220 * 1.5 = 330px) */
+                height: 200px; /* Reduced from 330px to a more reasonable height */
             }
             
             .carousel-btn {
@@ -415,6 +422,7 @@
             }
             
             .testimonial-carousel {
+                height: 300px; /* Reduced from 390px to a more reasonable height */
                 flex-direction: column;
                 gap: 15px;
                 align-items: center;
