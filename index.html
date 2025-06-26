@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <!-- Dark Mode CSS -->
+    <link rel="stylesheet" href="/path/to/dark-mode.css">
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="../media/favicon-196x196.png" rel="shortcut icon" />
@@ -10,6 +12,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Dark Mode JS -->
+    <script src="/path/to/dark-mode.js"></script>
     <!-- SECTION: HEADER -->
     <div class="n-header">
     </div>
@@ -26,6 +30,12 @@
             <span class="separator">|</span>
             <a href="teaching">TEACHING</a>
             <span class="separator">|</span>
+        <span class="dark-mode-toggle">
+            <button id="darkModeBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+            <i class="fas fa-moon" id="darkModeIcon"></i>
+            </button>
+        </span>
+    </div>
         </div>
     </div>
     <!-- SECTION: MAIN BODY -->
