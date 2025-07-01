@@ -12,9 +12,13 @@
 <body>
     <!-- Dark Mode Toggle Button -->
     <div class="dark-mode-toggle">
-        <button id="darkModeBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-            <i class="fas fa-moon" id="darkModeIcon"></i>
-        </button>
+        <div class="toggle-switch" onclick="toggleDarkMode()">
+            <i class="fas fa-moon toggle-icon moon-icon"></i>
+            <div class="toggle-slider" id="toggleSlider">
+                <div class="toggle-handle"></div>
+            </div>
+            <i class="fas fa-sun toggle-icon sun-icon"></i>
+        </div>
     </div>
 
     <!-- SECTION: HEADER -->
@@ -123,7 +127,7 @@
     </div>
     
     <style>
-        /* Dark Mode Toggle Button */
+        /* Dark Mode Toggle Switch */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -131,30 +135,74 @@
             z-index: 1000;
         }
 
-        #darkModeBtn {
-            background: #BA0C2F;
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(186, 12, 47, 0.3);
+        .toggle-switch {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
         }
 
-        #darkModeBtn:hover {
-            background: #8B0A24;
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.4);
+        .toggle-icon {
+            font-size: 18px;
+            transition: opacity 0.3s ease, color 0.3s ease;
         }
 
-        #darkModeBtn:active {
-            transform: scale(0.95);
+        .moon-icon {
+            color: #666;
+            opacity: 1;
+        }
+
+        .sun-icon {
+            color: #ffd700;
+            opacity: 0.3;
+        }
+
+        .toggle-slider {
+            width: 50px;
+            height: 24px;
+            background: #ddd;
+            border-radius: 12px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-handle {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Dark mode active state */
+        body.dark-mode .toggle-slider {
+            background: #BA0C2F;
+        }
+
+        body.dark-mode .toggle-handle {
+            transform: translateX(26px);
+        }
+
+        body.dark-mode .moon-icon {
+            opacity: 0.3;
+        }
+
+        body.dark-mode .sun-icon {
+            opacity: 1;
+        }
+
+        /* Hover effects */
+        .toggle-switch:hover .toggle-slider {
+            background: #bbb;
+        }
+
+        body.dark-mode .toggle-switch:hover .toggle-slider {
+            background: #d41e3a;
         }
 
         /* Dark Mode Styles */
@@ -623,23 +671,19 @@
             const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
             const body = document.body;
             const html = document.documentElement;
-            const icon = document.getElementById('darkModeIcon');
             
             if (isDarkMode) {
                 body.classList.add('dark-mode');
                 html.classList.add('dark-mode');
-                icon.className = 'fas fa-sun';
             } else {
                 body.classList.remove('dark-mode');
                 html.classList.remove('dark-mode');
-                icon.className = 'fas fa-moon';
             }
         }
 
         function toggleDarkMode() {
             const body = document.body;
             const html = document.documentElement;
-            const icon = document.getElementById('darkModeIcon');
             
             body.classList.toggle('dark-mode');
             html.classList.toggle('dark-mode');
@@ -647,13 +691,6 @@
             // Save preference to localStorage
             const isDarkMode = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-            
-            // Change icon based on mode
-            if (isDarkMode) {
-                icon.className = 'fas fa-sun';
-            } else {
-                icon.className = 'fas fa-moon';
-            }
         }
 
         function toggleDropdown(dropdownId) {
