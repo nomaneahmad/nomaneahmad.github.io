@@ -13,11 +13,11 @@
     <!-- Dark Mode Toggle Button -->
     <div class="dark-mode-toggle">
         <div class="theme-toggle" onclick="toggleDarkMode()">
-            <i class="fas fa-moon toggle-icon"></i>
+            <i class="fas fa-moon toggle-icon moon-icon"></i>
             <div class="toggle-track">
                 <div class="toggle-thumb"></div>
             </div>
-            <i class="fas fa-sun toggle-icon"></i>
+            <i class="fas fa-sun toggle-icon sun-icon"></i>
         </div>
     </div>
 
@@ -125,7 +125,7 @@
     </div>
 
     <style>
-        /* Dark Mode Toggle Switch */
+        /* Dark Mode Toggle Switch - Updated Design */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -133,74 +133,111 @@
             z-index: 1000;
         }
 
-        .toggle-switch {
+        .theme-toggle {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             cursor: pointer;
             user-select: none;
+            padding: 4px;
+            transition: all 0.3s ease;
         }
 
         .toggle-icon {
-            font-size: 18px;
-            transition: opacity 0.3s ease, color 0.3s ease;
+            font-size: 10px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
         }
 
         .moon-icon {
-            color: #666;
+            color: #e0e0e0;
             opacity: 1;
         }
 
         .sun-icon {
             color: #ffd700;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
-        .toggle-slider {
-            width: 50px;
-            height: 24px;
-            background: #ddd;
+        .toggle-track {
+            width: 32px;
+            height: 16px;
+            background: linear-gradient(135deg, #666, #888);
             border-radius: 12px;
             position: relative;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 0 1px 3px rgba(0,0,0,0.3),
+                0 1px 4px rgba(0,0,0,0.2);
+            border: 1px solid #555;
         }
 
-        .toggle-handle {
-            width: 20px;
-            height: 20px;
-            background: white;
+        .toggle-thumb {
+            width: 13px;
+            height: 13px;
+            background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
             border-radius: 50%;
             position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            top: 1.5px;
+            left: 1.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.3),
+                0 1px 2px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
         }
 
         /* Dark mode active state */
-        body.dark-mode .toggle-slider {
-            background: #BA0C2F;
+        body.dark-mode .toggle-track {
+            background: linear-gradient(135deg, #BA0C2F, #d41e3a);
+            border-color: #a00b28;
         }
 
-        body.dark-mode .toggle-handle {
-            transform: translateX(26px);
+        body.dark-mode .toggle-thumb {
+            transform: translateX(16px);
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            border-color: #ddd;
         }
 
         body.dark-mode .moon-icon {
-            opacity: 0.3;
+            opacity: 0.4;
+            color: #b0b0b0;
         }
 
         body.dark-mode .sun-icon {
             opacity: 1;
+            color: #ffd700;
         }
 
         /* Hover effects */
-        .toggle-switch:hover .toggle-slider {
-            background: #bbb;
+        .theme-toggle:hover .toggle-track {
+            transform: scale(1.05);
+            box-shadow: 
+                inset 0 2px 6px rgba(0,0,0,0.4),
+                0 4px 12px rgba(0,0,0,0.3);
         }
 
-        body.dark-mode .toggle-switch:hover .toggle-slider {
-            background: #d41e3a;
+        .theme-toggle:hover .toggle-thumb {
+            box-shadow: 
+                0 2px 4px rgba(0,0,0,0.4),
+                0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .theme-toggle:hover .toggle-track {
+            background: linear-gradient(135deg, #d41e3a, #ff4d6d);
+        }
+
+        /* Active state */
+        .theme-toggle:active .toggle-track {
+            transform: scale(0.98);
+        }
+
+        .theme-toggle:active .toggle-thumb {
+            transform: scale(0.95);
+        }
+
+        body.dark-mode .theme-toggle:active .toggle-thumb {
+            transform: translateX(16px) scale(0.95);
         }
 
         /* Dark Mode Styles */
@@ -326,14 +363,6 @@
 
         body.dark-mode #pdfError {
             color: #b0b0b0;
-        }
-
-        body.dark-mode #darkModeBtn {
-            background: #BA0C2F;
-        }
-
-        body.dark-mode #darkModeBtn:hover {
-            background: #ff4d6d;
         }
 
         /* Original Styles */
@@ -638,26 +667,26 @@
             }
 
             .theme-toggle {
-                gap: 10px;
-                padding: 6px;
+                gap: 6px;
+                padding: 3px;
             }
 
             .toggle-icon {
-                font-size: 16px;
+                font-size: 9px;
             }
 
             .toggle-track {
-                width: 48px;
-                height: 26px;
+                width: 28px;
+                height: 14px;
             }
 
             .toggle-thumb {
-                width: 22px;
-                height: 22px;
+                width: 11px;
+                height: 11px;
             }
 
             body.dark-mode .toggle-thumb {
-                transform: translateX(22px);
+                transform: translateX(14px);
             }
         }
     </style>
