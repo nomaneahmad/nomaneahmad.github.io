@@ -164,6 +164,29 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        body.dark-mode,
+        body.dark-mode * {
+            background-color: #1a1a1a !important;
+        }
+
+        body.dark-mode .n-header,
+        body.dark-mode .n-article,
+        body.dark-mode .testimonials-section,
+        body.dark-mode .paper-item {
+            background-color: #1a1a1a !important;
+        }
+
+        /* Ensure full page coverage */
+        html.dark-mode,
+        html.dark-mode body {
+            background-color: #1a1a1a !important;
+            min-height: 100vh;
+        }
+
+        html.dark-mode {
+            background-color: #1a1a1a !important;
+        }
+
         body.dark-mode .n-title h1 {
             color: #e0e0e0;
         }
@@ -198,9 +221,13 @@
         }
 
         body.dark-mode .testimonial-content {
-            background: #2a2a2a;
+            background: #2a2a2a !important;
             color: #e0e0e0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .dropdown-content {
+            background: #1a1a1a !important;
         }
 
         body.dark-mode .testimonial-text {
@@ -582,22 +609,27 @@
         function initializeDarkMode() {
             const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
             const body = document.body;
+            const html = document.documentElement;
             const icon = document.getElementById('darkModeIcon');
             
             if (isDarkMode) {
                 body.classList.add('dark-mode');
+                html.classList.add('dark-mode');
                 icon.className = 'fas fa-sun';
             } else {
                 body.classList.remove('dark-mode');
+                html.classList.remove('dark-mode');
                 icon.className = 'fas fa-moon';
             }
         }
 
         function toggleDarkMode() {
             const body = document.body;
+            const html = document.documentElement;
             const icon = document.getElementById('darkModeIcon');
             
             body.classList.toggle('dark-mode');
+            html.classList.toggle('dark-mode');
             
             // Save preference to localStorage
             const isDarkMode = body.classList.contains('dark-mode');
