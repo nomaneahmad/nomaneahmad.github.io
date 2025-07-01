@@ -12,12 +12,12 @@
 <body>
     <!-- Dark Mode Toggle Button -->
     <div class="dark-mode-toggle">
-        <div class="toggle-switch" onclick="toggleDarkMode()">
-            <i class="fas fa-moon toggle-icon moon-icon"></i>
-            <div class="toggle-slider" id="toggleSlider">
-                <div class="toggle-handle"></div>
+        <div class="theme-toggle" onclick="toggleDarkMode()">
+            <i class="fas fa-moon toggle-icon"></i>
+            <div class="toggle-track">
+                <div class="toggle-thumb"></div>
             </div>
-            <i class="fas fa-sun toggle-icon sun-icon"></i>
+            <i class="fas fa-sun toggle-icon"></i>
         </div>
     </div>
 
@@ -657,6 +657,23 @@
             
             .testimonial-content {
                 padding: 1rem;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+            }
+
+            .mode-toggle {
+                padding: 6px 10px;
+            }
+
+            .mode-text {
+                font-size: 12px;
+                padding: 1px 4px;
             }
         }
     </style>
