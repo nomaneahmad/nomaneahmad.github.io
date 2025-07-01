@@ -367,9 +367,11 @@
             font-weight: 600;
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
+
         .paper-item {
             margin-bottom: 1rem;
         }
+
         .paper-item p {
             margin: 0;
             transition: color 0.3s ease;
@@ -381,6 +383,7 @@
             justify-content: center;
             gap: 12px;
         }
+
         .byline a {
             color: #999;
             text-decoration: none;
@@ -389,9 +392,11 @@
             font-size: 1.5em;
             transition: color 0.3s ease;
         }
+
         .byline a:hover {
             color: #BA0C2F;
         }
+
         .separator {
             color: #ccc;
             font-weight: 300;
@@ -705,3 +710,94 @@
                 padding: 1rem;
             }
         }
+    </style>
+    
+    <script>
+        // Initialize dark mode on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDarkMode();
+        });
+
+        function initializeDarkMode() {
+            const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
+            const body = document.body;
+            const html = document.documentElement;
+            
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                html.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                html.classList.remove('dark-mode');
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const html = document.documentElement;
+            
+            body.classList.toggle('dark-mode');
+            html.classList.toggle('dark-mode');
+            
+            // Save preference to localStorage
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+        }
+
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = document.getElementById('arrow' + dropdownId.replace('-', ''));
+            
+            dropdown.classList.toggle('open');
+            arrow.classList.toggle('rotated');
+        }
+        
+        function toggleTestimonials() {
+            const wrapper = document.getElementById('testimonial-wrapper');
+            const arrow = document.getElementById('testimonial-arrow');
+            
+            wrapper.classList.toggle('open');
+            arrow.classList.toggle('rotated');
+            
+            // Initialize testimonials when opened for the first time
+            if (wrapper.classList.contains('open')) {
+                displayTestimonial();
+            }
+        }
+        
+        // Testimonials data
+        const testimonials = [
+            "I think this whole class was really well done! I feel like I learned a lot from this class. Professor Ahmad definitely knows what he is talking about and does a wonderful job of explaining the course material. The presentations, and other materials were also very useful to look back over which I really appreciated because I know not all professors allow students to have the lecture slides.",
+            "I thought our professor did a good job of teaching the material and he is very knowledgeable on economics.",
+            "Professor Ahmad did an excellent job on helping us understand the material he was teaching with multiple example that were connected back to the real life making it a fun and interesting class. I looked forward to going to his class as he would always be willing to help and was always well in responding back with emails. He explained concepts multiple times if we did not get it the first time and his assignments aligned well with the content. I would definitely take him again. There was nothing I believed needed great improvement because everything was done well.",
+            "He was very informative but sometimes got off topic. The professor was very good and does not need any improvement.",
+            "He did a great job at making sure we knew everything that was necessary to know plus more! I think he could have mixed up the formats of lessons at times.",
+            "Did a good job at making sure students were participating and engaging with course material. Teaching style is a little hard to follow.",
+            "Used class time efficiently and challenged students to participate through class.",
+            "He was accessible outside of class and never made you feel bad for asking questions.",
+            "I really liked when there were real world examples, I think that when they were too complicated it was confusing though.",
+            "The professor was very accessible to students who needed help and/or had questions in class. He was very fair in grading and assignment timing. The only way I possibly see room for improvement is by being a little more engaging in presenting the material to students.",
+            "He did a very good job this semester, and I learned a lot.",
+            "This course was well taught and organized. The instructor randomly placed iClicker questions throughout his lectures, which forced attention to detail during lectures. This helped me further learn the information that was being taught in lectures. It can be improved upon by allowing multiple attempts for the end-of-chapter quizzes to further grasp the information in this course."
+        ];
+        
+        let currentTestimonial = 0;
+        
+        function displayTestimonial() {
+            document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
+        }
+        
+        function changeTestimonial(direction) {
+            currentTestimonial += direction;
+            
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            } else if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            }
+            
+            displayTestimonial();
+        }
+    </script>
+</body>
+</html>
