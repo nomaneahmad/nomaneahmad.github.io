@@ -10,6 +10,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Dark Mode Toggle Button -->
+    <div class="dark-mode-toggle">
+        <button id="darkModeBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+            <i class="fas fa-moon" id="darkModeIcon"></i>
+        </button>
+    </div>
+
     <!-- SECTION: HEADER -->
     <div class="n-header">
     </div>
@@ -50,7 +57,7 @@
                 <p> 
                 </p>
                 <p> I am a Ph.D. candidate in the John Munro Godfrey, Sr. Department of Economics at the Terry College of Business, University of Georgia. </p>
-                <p> My research focuses on applied economics, with an emphasis on development, health, and education. My pre-doctoral work focuses on the political economy of development, and the impact of shocks on informal institutions. </p>
+                <p> My research focuses on applied economics with a focus on development, health, and education. My pre-doctoral work focuses on the political economy of development, and the impact of shocks on informal institutions. </p>
                 <p>I am currently on the 2025-2026 job market. </p>
                 <p>Please click <a href="#" onclick="showCVModal()" class="cv-link">here</a> to access my CV. </p>
             </div>
@@ -114,11 +121,147 @@
     </div>
 
     <style>
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #darkModeBtn {
+            background: #BA0C2F;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(186, 12, 47, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #darkModeBtn:hover {
+            background: #8B0A24;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.4);
+        }
+
+        #darkModeBtn:active {
+            transform: scale(0.95);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode .n-title h1 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .byline a {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .byline a:hover {
+            color: #BA0C2F;
+        }
+
+        body.dark-mode .separator {
+            color: #666;
+        }
+
+        body.dark-mode p {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .social-links a {
+            color: #BA0C2F;
+        }
+
+        body.dark-mode .cv-link {
+            color: #BA0C2F !important;
+        }
+
+        body.dark-mode .modal-content {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .modal-content h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .email-option {
+            border-color: #404040;
+            color: #e0e0e0;
+            background-color: #2a2a2a;
+        }
+
+        body.dark-mode .email-option:hover {
+            border-color: #BA0C2F;
+            background-color: #333;
+        }
+
+        body.dark-mode .email-option strong {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .email-option p {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .cv-modal-content {
+            background: #2a2a2a;
+        }
+
+        body.dark-mode .cv-close {
+            background: rgba(42, 42, 42, 0.95);
+            color: #e0e0e0;
+            border-color: #404040;
+        }
+
+        body.dark-mode .cv-close:hover {
+            background: rgba(42, 42, 42, 1);
+            color: #fff;
+        }
+
+        body.dark-mode .cv-modal h3 {
+            background: rgba(42, 42, 42, 0.95);
+            color: #e0e0e0;
+            border-color: #404040;
+        }
+
+        body.dark-mode .cv-container {
+            background: #333;
+        }
+
+        body.dark-mode #pdfError {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode #darkModeBtn {
+            background: #BA0C2F;
+        }
+
+        body.dark-mode #darkModeBtn:hover {
+            background: #ff4d6d;
+        }
+
+        /* Original Styles */
         .email {
             margin-top: 10px;
             font-size: 1.1em;
             color: #666;
             text-align: center;
+            transition: color 0.3s ease;
         }
         .email a {
             color: #BA0C2F;
@@ -141,7 +284,8 @@
             text-decoration: none;
             font-size: 0.75em;
             padding: 3px 0;
-            line-height: 1.2
+            line-height: 1.2;
+            transition: color 0.3s ease;
         }
         .social-links a:hover {
             text-decoration: underline;
@@ -168,6 +312,7 @@
             font-weight: normal;
             letter-spacing: 2px;
             font-size: 1.5em;
+            transition: color 0.3s ease;
         }
 
         .byline a:hover {
@@ -177,6 +322,11 @@
         .separator {
             color: #ccc;
             font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        p {
+            transition: color 0.3s ease;
         }
 
         /* Modal Styles */
@@ -200,6 +350,7 @@
             width: 90%;
             max-width: 400px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .close {
@@ -222,6 +373,7 @@
             margin-bottom: 20px;
             color: #333;
             text-align: center;
+            transition: color 0.3s ease;
         }
 
         .email-options {
@@ -264,12 +416,14 @@
             display: block;
             margin-bottom: 2px;
             color: #333;
+            transition: color 0.3s ease;
         }
 
         .email-option p {
             margin: 0;
             font-size: 0.9em;
             color: #666;
+            transition: color 0.3s ease;
         }
 
         .email-link {
@@ -291,6 +445,7 @@
             border-radius: 8px;
             position: relative;
             background: #fff;
+            transition: background-color 0.3s ease;
         }
 
         .cv-modal .cv-close {
@@ -310,6 +465,7 @@
             cursor: pointer;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             border: 2px solid #ddd;
+            transition: all 0.3s ease;
         }
 
         .cv-modal .cv-close:hover {
@@ -330,6 +486,7 @@
             border: 2px solid #ddd;
             font-size: 18px;
             color: #333;
+            transition: all 0.3s ease;
         }
 
         .cv-container {
@@ -340,6 +497,7 @@
             overflow: hidden;
             position: relative;
             background: #f5f5f5;
+            transition: background-color 0.3s ease;
         }
 
         .cv-container iframe {
@@ -390,9 +548,60 @@
                 visibility: hidden !important;
             }
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+            }
+
+            #darkModeBtn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1em;
+            }
+        }
     </style>
 
     <script>
+        // Initialize dark mode on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDarkMode();
+        });
+
+        function initializeDarkMode() {
+            const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
+            const body = document.body;
+            const icon = document.getElementById('darkModeIcon');
+            
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                icon.className = 'fas fa-sun';
+            } else {
+                body.classList.remove('dark-mode');
+                icon.className = 'fas fa-moon';
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.getElementById('darkModeIcon');
+            
+            body.classList.toggle('dark-mode');
+            
+            // Save preference to localStorage
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+            
+            // Change icon based on mode
+            if (isDarkMode) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+
         function showEmailPopup() {
             document.getElementById('emailModal').style.display = 'block';
         }
