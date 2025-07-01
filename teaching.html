@@ -13,11 +13,11 @@
     <!-- Dark Mode Toggle Button -->
     <div class="dark-mode-toggle">
         <div class="theme-toggle" onclick="toggleDarkMode()">
-            <i class="fas fa-moon toggle-icon"></i>
+            <i class="fas fa-moon toggle-icon moon-icon"></i>
             <div class="toggle-track">
                 <div class="toggle-thumb"></div>
             </div>
-            <i class="fas fa-sun toggle-icon"></i>
+            <i class="fas fa-sun toggle-icon sun-icon"></i>
         </div>
     </div>
 
@@ -127,7 +127,7 @@
     </div>
     
     <style>
-        /* Dark Mode Toggle Switch */
+        /* Dark Mode Toggle Switch - Updated Design */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -135,74 +135,111 @@
             z-index: 1000;
         }
 
-        .toggle-switch {
+        .theme-toggle {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             cursor: pointer;
             user-select: none;
+            padding: 4px;
+            transition: all 0.3s ease;
         }
 
         .toggle-icon {
-            font-size: 18px;
-            transition: opacity 0.3s ease, color 0.3s ease;
+            font-size: 10px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
         }
 
         .moon-icon {
-            color: #666;
+            color: #e0e0e0;
             opacity: 1;
         }
 
         .sun-icon {
             color: #ffd700;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
-        .toggle-slider {
-            width: 50px;
-            height: 24px;
-            background: #ddd;
+        .toggle-track {
+            width: 32px;
+            height: 16px;
+            background: linear-gradient(135deg, #666, #888);
             border-radius: 12px;
             position: relative;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 0 1px 3px rgba(0,0,0,0.3),
+                0 1px 4px rgba(0,0,0,0.2);
+            border: 1px solid #555;
         }
 
-        .toggle-handle {
-            width: 20px;
-            height: 20px;
-            background: white;
+        .toggle-thumb {
+            width: 13px;
+            height: 13px;
+            background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
             border-radius: 50%;
             position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            top: 1.5px;
+            left: 1.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.3),
+                0 1px 2px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
         }
 
         /* Dark mode active state */
-        body.dark-mode .toggle-slider {
-            background: #BA0C2F;
+        body.dark-mode .toggle-track {
+            background: linear-gradient(135deg, #BA0C2F, #d41e3a);
+            border-color: #a00b28;
         }
 
-        body.dark-mode .toggle-handle {
-            transform: translateX(26px);
+        body.dark-mode .toggle-thumb {
+            transform: translateX(16px);
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            border-color: #ddd;
         }
 
         body.dark-mode .moon-icon {
-            opacity: 0.3;
+            opacity: 0.4;
+            color: #b0b0b0;
         }
 
         body.dark-mode .sun-icon {
             opacity: 1;
+            color: #ffd700;
         }
 
         /* Hover effects */
-        .toggle-switch:hover .toggle-slider {
-            background: #bbb;
+        .theme-toggle:hover .toggle-track {
+            transform: scale(1.05);
+            box-shadow: 
+                inset 0 1px 3px rgba(0,0,0,0.4),
+                0 2px 6px rgba(0,0,0,0.3);
         }
 
-        body.dark-mode .toggle-switch:hover .toggle-slider {
-            background: #d41e3a;
+        .theme-toggle:hover .toggle-thumb {
+            box-shadow: 
+                0 2px 4px rgba(0,0,0,0.4),
+                0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .theme-toggle:hover .toggle-track {
+            background: linear-gradient(135deg, #d41e3a, #ff4d6d);
+        }
+
+        /* Active state */
+        .theme-toggle:active .toggle-track {
+            transform: scale(0.98);
+        }
+
+        .theme-toggle:active .toggle-thumb {
+            transform: scale(0.95);
+        }
+
+        body.dark-mode .theme-toggle:active .toggle-thumb {
+            transform: translateX(16px) scale(0.95);
         }
 
         /* Dark Mode Styles */
@@ -317,14 +354,6 @@
 
         body.dark-mode .dropdown-link:hover {
             color: #ff4d6d;
-        }
-
-        body.dark-mode #darkModeBtn {
-            background: #BA0C2F;
-        }
-
-        body.dark-mode #darkModeBtn:hover {
-            background: #ff4d6d;
         }
 
         /* Original Styles */
@@ -618,10 +647,27 @@
                 right: 15px;
             }
 
-            #darkModeBtn {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1em;
+            .theme-toggle {
+                gap: 6px;
+                padding: 3px;
+            }
+
+            .toggle-icon {
+                font-size: 9px;
+            }
+
+            .toggle-track {
+                width: 28px;
+                height: 14px;
+            }
+
+            .toggle-thumb {
+                width: 11px;
+                height: 11px;
+            }
+
+            body.dark-mode .toggle-thumb {
+                transform: translateX(14px);
             }
 
             .testimonial-content-wrapper.open {
@@ -659,111 +705,3 @@
                 padding: 1rem;
             }
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .dark-mode-toggle {
-                top: 15px;
-                right: 15px;
-            }
-
-            .mode-toggle {
-                padding: 6px 10px;
-            }
-
-            .mode-text {
-                font-size: 12px;
-                padding: 1px 4px;
-            }
-        }
-    </style>
-    
-    <script>
-        // Initialize dark mode on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDarkMode();
-        });
-
-        function initializeDarkMode() {
-            const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
-            const body = document.body;
-            const html = document.documentElement;
-            
-            if (isDarkMode) {
-                body.classList.add('dark-mode');
-                html.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                html.classList.remove('dark-mode');
-            }
-        }
-
-        function toggleDarkMode() {
-            const body = document.body;
-            const html = document.documentElement;
-            
-            body.classList.toggle('dark-mode');
-            html.classList.toggle('dark-mode');
-            
-            // Save preference to localStorage
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-        }
-
-        function toggleDropdown(dropdownId) {
-            const dropdown = document.getElementById(dropdownId);
-            const arrow = document.getElementById('arrow' + dropdownId.replace('-', ''));
-            
-            dropdown.classList.toggle('open');
-            arrow.classList.toggle('rotated');
-        }
-        
-        function toggleTestimonials() {
-            const wrapper = document.getElementById('testimonial-wrapper');
-            const arrow = document.getElementById('testimonial-arrow');
-            
-            wrapper.classList.toggle('open');
-            arrow.classList.toggle('rotated');
-            
-            // Initialize testimonials when opened for the first time
-            if (wrapper.classList.contains('open')) {
-                displayTestimonial();
-            }
-        }
-        
-        // Testimonials data
-        const testimonials = [
-            "I think this whole class was really well done! I feel like I learned a lot from this class. Professor Ahmad definitely knows what he is talking about and does a wonderful job of explaining the course material. The presentations, and other materials were also very useful to look back over which I really appreciated because I know not all professors allow students to have the lecture slides.",
-            "I thought our professor did a good job of teaching the material and he is very knowledgeable on economics.",
-            "Professor Ahmad did an excellent job on helping us understand the material he was teaching with multiple example that were connected back to the real life making it a fun and interesting class. I looked forward to going to his class as he would always be willing to help and was always well in responding back with emails. He explained concepts multiple times if we did not get it the first time and his assignments aligned well with the content. I would definitely take him again. There was nothing I believed needed great improvement because everything was done well.",
-            "He was very informative but sometimes got off topic. The professor was very good and does not need any improvement.",
-            "He did a great job at making sure we knew everything that was necessary to know plus more! I think he could have mixed up the formats of lessons at times.",
-            "Did a good job at making sure students were participating and engaging with course material. Teaching style is a little hard to follow.",
-            "Used class time efficiently and challenged students to participate through class.",
-            "He was accessible outside of class and never made you feel bad for asking questions.",
-            "I really liked when there were real world examples, I think that when they were too complicated it was confusing though.",
-            "The professor was very accessible to students who needed help and/or had questions in class. He was very fair in grading and assignment timing. The only way I possibly see room for improvement is by being a little more engaging in presenting the material to students.",
-            "He did a very good job this semester, and I learned a lot.",
-            "This course was well taught and organized. The instructor randomly placed iClicker questions throughout his lectures, which forced attention to detail during lectures. This helped me further learn the information that was being taught in lectures. It can be improved upon by allowing multiple attempts for the end-of-chapter quizzes to further grasp the information in this course."
-        ];
-        
-        let currentTestimonial = 0;
-        
-        function displayTestimonial() {
-            document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
-        }
-        
-        function changeTestimonial(direction) {
-            currentTestimonial += direction;
-            
-            if (currentTestimonial >= testimonials.length) {
-                currentTestimonial = 0;
-            } else if (currentTestimonial < 0) {
-                currentTestimonial = testimonials.length - 1;
-            }
-            
-            displayTestimonial();
-        }
-    </script>
-</body>
-</html>
