@@ -162,6 +162,18 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        body.dark-mode,
+        body.dark-mode * {
+            background-color: #1a1a1a !important;
+        }
+
+        body.dark-mode .n-header,
+        body.dark-mode .n-article,
+        body.dark-mode .image-text,
+        body.dark-mode .image-text--image {
+            background-color: #1a1a1a !important;
+        }
+
         body.dark-mode .n-title h1 {
             color: #e0e0e0;
         }
@@ -190,9 +202,30 @@
             color: #BA0C2F !important;
         }
 
+        /* Override any default white backgrounds in dark mode */
         body.dark-mode .modal-content {
-            background-color: #2a2a2a;
+            background-color: #2a2a2a !important;
             color: #e0e0e0;
+        }
+
+        body.dark-mode .cv-modal-content {
+            background: #2a2a2a !important;
+        }
+
+        body.dark-mode .cv-container {
+            background: #333 !important;
+        }
+
+        /* Ensure full page coverage */
+        html.dark-mode,
+        html.dark-mode body {
+            background-color: #1a1a1a !important;
+            min-height: 100vh;
+        }
+
+        /* Apply dark mode to html element as well */
+        html.dark-mode {
+            background-color: #1a1a1a !important;
         }
 
         body.dark-mode .modal-content h3 {
@@ -573,22 +606,27 @@
         function initializeDarkMode() {
             const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
             const body = document.body;
+            const html = document.documentElement;
             const icon = document.getElementById('darkModeIcon');
             
             if (isDarkMode) {
                 body.classList.add('dark-mode');
+                html.classList.add('dark-mode');
                 icon.className = 'fas fa-sun';
             } else {
                 body.classList.remove('dark-mode');
+                html.classList.remove('dark-mode');
                 icon.className = 'fas fa-moon';
             }
         }
 
         function toggleDarkMode() {
             const body = document.body;
+            const html = document.documentElement;
             const icon = document.getElementById('darkModeIcon');
             
             body.classList.toggle('dark-mode');
+            html.classList.toggle('dark-mode');
             
             // Save preference to localStorage
             const isDarkMode = body.classList.contains('dark-mode');
