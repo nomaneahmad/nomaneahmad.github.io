@@ -12,13 +12,9 @@
 <body>
     <!-- Dark Mode Toggle Button -->
     <div class="dark-mode-toggle">
-        <div class="theme-toggle" onclick="toggleDarkMode()">
-            <i class="fas fa-moon toggle-icon moon-icon"></i>
-            <div class="toggle-track">
-                <div class="toggle-thumb"></div>
-            </div>
-            <i class="fas fa-sun toggle-icon sun-icon"></i>
-        </div>
+        <button id="darkModeBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+            <i class="fas fa-moon" id="darkModeIcon"></i>
+        </button>
     </div>
 
     <!-- SECTION: HEADER -->
@@ -127,7 +123,7 @@
     </div>
     
     <style>
-        /* Dark Mode Toggle Switch - Updated Design */
+        /* Dark Mode Toggle Button */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -135,111 +131,30 @@
             z-index: 1000;
         }
 
-        .theme-toggle {
+        #darkModeBtn {
+            background: #BA0C2F;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(186, 12, 47, 0.3);
             display: flex;
             align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            user-select: none;
-            padding: 4px;
-            transition: all 0.3s ease;
+            justify-content: center;
         }
 
-        .toggle-icon {
-            font-size: 10px;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+        #darkModeBtn:hover {
+            background: #8B0A24;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.4);
         }
 
-        .moon-icon {
-            color: #e0e0e0;
-            opacity: 1;
-        }
-
-        .sun-icon {
-            color: #ffd700;
-            opacity: 0.4;
-        }
-
-        .toggle-track {
-            width: 32px;
-            height: 16px;
-            background: linear-gradient(135deg, #666, #888);
-            border-radius: 12px;
-            position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 
-                inset 0 1px 3px rgba(0,0,0,0.3),
-                0 1px 4px rgba(0,0,0,0.2);
-            border: 1px solid #555;
-        }
-
-        .toggle-thumb {
-            width: 13px;
-            height: 13px;
-            background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
-            border-radius: 50%;
-            position: absolute;
-            top: 1.5px;
-            left: 1.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 
-                0 1px 3px rgba(0,0,0,0.3),
-                0 1px 2px rgba(0,0,0,0.2);
-            border: 1px solid #ccc;
-        }
-
-        /* Dark mode active state */
-        body.dark-mode .toggle-track {
-            background: linear-gradient(135deg, #BA0C2F, #d41e3a);
-            border-color: #a00b28;
-        }
-
-        body.dark-mode .toggle-thumb {
-            transform: translateX(16px);
-            background: linear-gradient(135deg, #ffffff, #f0f0f0);
-            border-color: #ddd;
-        }
-
-        body.dark-mode .moon-icon {
-            opacity: 0.4;
-            color: #b0b0b0;
-        }
-
-        body.dark-mode .sun-icon {
-            opacity: 1;
-            color: #ffd700;
-        }
-
-        /* Hover effects */
-        .theme-toggle:hover .toggle-track {
-            transform: scale(1.05);
-            box-shadow: 
-                inset 0 1px 3px rgba(0,0,0,0.4),
-                0 2px 6px rgba(0,0,0,0.3);
-        }
-
-        .theme-toggle:hover .toggle-thumb {
-            box-shadow: 
-                0 2px 4px rgba(0,0,0,0.4),
-                0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        body.dark-mode .theme-toggle:hover .toggle-track {
-            background: linear-gradient(135deg, #d41e3a, #ff4d6d);
-        }
-
-        /* Active state */
-        .theme-toggle:active .toggle-track {
-            transform: scale(0.98);
-        }
-
-        .theme-toggle:active .toggle-thumb {
+        #darkModeBtn:active {
             transform: scale(0.95);
-        }
-
-        body.dark-mode .theme-toggle:active .toggle-thumb {
-            transform: translateX(16px) scale(0.95);
         }
 
         /* Dark Mode Styles */
@@ -356,6 +271,14 @@
             color: #ff4d6d;
         }
 
+        body.dark-mode #darkModeBtn {
+            background: #BA0C2F;
+        }
+
+        body.dark-mode #darkModeBtn:hover {
+            background: #ff4d6d;
+        }
+
         /* Original Styles */
         h3 {
             font-size: 1.4em;
@@ -367,11 +290,9 @@
             font-weight: 600;
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
-
         .paper-item {
             margin-bottom: 1rem;
         }
-
         .paper-item p {
             margin: 0;
             transition: color 0.3s ease;
@@ -383,7 +304,6 @@
             justify-content: center;
             gap: 12px;
         }
-
         .byline a {
             color: #999;
             text-decoration: none;
@@ -392,11 +312,9 @@
             font-size: 1.5em;
             transition: color 0.3s ease;
         }
-
         .byline a:hover {
             color: #BA0C2F;
         }
-
         .separator {
             color: #ccc;
             font-weight: 300;
@@ -652,27 +570,10 @@
                 right: 15px;
             }
 
-            .theme-toggle {
-                gap: 6px;
-                padding: 3px;
-            }
-
-            .toggle-icon {
-                font-size: 9px;
-            }
-
-            .toggle-track {
-                width: 28px;
-                height: 14px;
-            }
-
-            .toggle-thumb {
-                width: 11px;
-                height: 11px;
-            }
-
-            body.dark-mode .toggle-thumb {
-                transform: translateX(14px);
+            #darkModeBtn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1em;
             }
 
             .testimonial-content-wrapper.open {
@@ -722,19 +623,23 @@
             const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
             const body = document.body;
             const html = document.documentElement;
+            const icon = document.getElementById('darkModeIcon');
             
             if (isDarkMode) {
                 body.classList.add('dark-mode');
                 html.classList.add('dark-mode');
+                icon.className = 'fas fa-sun';
             } else {
                 body.classList.remove('dark-mode');
                 html.classList.remove('dark-mode');
+                icon.className = 'fas fa-moon';
             }
         }
 
         function toggleDarkMode() {
             const body = document.body;
             const html = document.documentElement;
+            const icon = document.getElementById('darkModeIcon');
             
             body.classList.toggle('dark-mode');
             html.classList.toggle('dark-mode');
@@ -742,6 +647,13 @@
             // Save preference to localStorage
             const isDarkMode = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+            
+            // Change icon based on mode
+            if (isDarkMode) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
         }
 
         function toggleDropdown(dropdownId) {
