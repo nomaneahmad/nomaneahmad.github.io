@@ -22,11 +22,11 @@
     </div>
 
     <!-- SECTION: HEADER -->
-    <div class="n-header"></div>
+    <div class="n-header">
+    </div>
     <div class="n-title">
         <h1> NOMAN AHMAD </h1>
     </div>
-
     <!-- SECTION: AUTHORS -->
     <div class="n-byline">
         <div class="byline">
@@ -39,41 +39,37 @@
             <span class="separator">|</span>
         </div>
     </div>
-
     <!-- SECTION: MAIN BODY -->
     <div class="n-article">
-
-        <!-- Student Testimonials (now a top-level dropdown, above Instructor of Record) -->
-        <div class="paper-item dropdown-item">
-            <div class="dropdown-header" onclick="toggleTestimonials()">
-                <p><strong>Selected Student Evaluations</strong></p>
-                <i class="fas fa-chevron-down dropdown-arrow" id="testimonial-arrow"></i>
+        
+        <div class="section-header">
+            <h3>Instructor of Record</h3>
+            <div class="testimonial-header" onclick="toggleTestimonials()">
+                <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
+                <h4>Selected Student Evaluations</h4>
             </div>
-
-            <div class="dropdown-content" id="testimonial-dropdown" style="background: transparent; padding: 0;">
-                <div class="testimonials-section">
-                    <div class="testimonial-content-wrapper" id="testimonial-wrapper">
-                        <div class="testimonial-carousel">
-                            <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <div class="testimonial-container">
-                                <div class="testimonial-content">
-                                    <i class="fas fa-quote-left quote-icon"></i>
-                                    <p class="testimonial-text" id="testimonial-text"></p>
-                                </div>
-                            </div>
-                            <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
+        </div>
+        
+        <!-- Student Testimonials Section -->
+        <div class="testimonials-section">
+            <div class="testimonial-content-wrapper" id="testimonial-wrapper">
+                <div class="testimonial-carousel">
+                    <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-container">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text" id="testimonial-text"></p>
                         </div>
                     </div>
+                    <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <h3>Instructor of Record</h3>
-
+        
         <div class="paper-item dropdown-item">
             <div class="dropdown-header" onclick="toggleDropdown('dropdown1')">
                 <p>Principles of Macroeconomics (ECON 2105) - Fall 2024</p>
@@ -81,13 +77,19 @@
             </div>
             <div class="dropdown-content" id="dropdown1">
                 <div class="dropdown-links">
-                    <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">Teaching Evaluations</a>
-                    <a href="files/Syllabus_ECON2105_Fall24.pdf" class="dropdown-link" target="_blank">Syllabus</a>
-                    <a href="https://drive.google.com/drive/folders/1dtoSAIsCt3wxwtuNCjgxd6vQ0n9SqMbg?usp=sharing" class="dropdown-link" target="_blank">Course Slides</a>
+                    <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">
+                        Teaching Evaluations
+                    </a>
+                    <a href="files/Syllabus_ECON2105_Fall24.pdf" class="dropdown-link" target="_blank">
+                        Syllabus
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1dtoSAIsCt3wxwtuNCjgxd6vQ0n9SqMbg?usp=sharing" class="dropdown-link" target="_blank">
+                        Course Slides
+                    </a>
                 </div>
             </div>
         </div>
-
+        
         <div class="paper-item dropdown-item">
             <div class="dropdown-header" onclick="toggleDropdown('dropdown2')">
                 <p>Principles of Macroeconomics (ECON 2105) - Fall 2023</p>
@@ -95,22 +97,43 @@
             </div>
             <div class="dropdown-content" id="dropdown2">
                 <div class="dropdown-links">
-                    <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">Teaching Evaluations</a>
-                    <a href="files/Syllabus_ECON2105_Fall23.pdf" class="dropdown-link" target="_blank">Syllabus</a>
+                    <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">
+                        Teaching Evaluations
+                    </a>
+                    <a href="files/Syllabus_ECON2105_Fall23.pdf" class="dropdown-link" target="_blank">
+                        Syllabus
+                    </a>
                 </div>
             </div>
         </div>
-
+        
         <h3>Teaching Assistant</h3>
 
-        <div class="paper-item"><p>Introduction to Econometrics (ECON 6750) - Fall 2025</p></div>
-        <div class="paper-item"><p>Introduction to Sustainable Development (ECON 3100) - Fall 2025</p></div>
-        <div class="paper-item"><p>Intermediate Macroeconomics (ECON 4020) - Spring 2025</p></div>
-        <div class="paper-item"><p>Intermediate Macroeconomics (ECON 4020) - Spring 2024</p></div>
-        <div class="paper-item"><p>Intermediate Macroeconomics (ECON 4020) - Spring 2023</p></div>
-        <div class="paper-item"><p>Economic Analysis for Business (EMBA 7010) - Fall 2022</p></div>
+        <div class="paper-item">
+            <p>Introduction to Econometrics (ECON 6750) - Fall 2025</p>
+        </div>
+        
+        <div class="paper-item">
+            <p>Introduction to Sustainable Development (ECON 3100) - Fall 2025 </p>
+        </div>
+        
+        <div class="paper-item">
+            <p>Intermediate Macroeconomics (ECON 4020) - Spring 2025</p>
+        </div>
+        
+        <div class="paper-item">
+            <p>Intermediate Macroeconomics (ECON 4020) - Spring 2024</p>
+        </div>
+        
+        <div class="paper-item">
+            <p>Intermediate Macroeconomics (ECON 4020) - Spring 2023</p>
+        </div>
+        
+        <div class="paper-item">
+            <p>Economic Analysis for Business (EMBA 7010) - Fall 2022</p>
+        </div>
     </div>
-
+    
     <style>
         /* Dark Mode Toggle Switch - Updated Design */
         .dark-mode-toggle {
@@ -119,120 +142,584 @@
             right: 20px;
             z-index: 1000;
         }
-        .theme-toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; padding: 4px; transition: all 0.3s ease; }
-        .toggle-icon { font-size: 10px; transition: all 0.3s ease; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
-        .moon-icon { color: #e0e0e0; opacity: 1; }
-        .sun-icon { color: #ffd700; opacity: 0.4; }
-        .toggle-track { width: 32px; height: 16px; background: linear-gradient(135deg, #666, #888); border-radius: 12px; position: relative; transition: all 0.3s ease;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2); border: 1px solid #555; }
-        .toggle-thumb { width: 13px; height: 13px; background: linear-gradient(135deg, #f0f0f0, #d0d0d0); border-radius: 50%; position: absolute; top: 1.5px; left: 1.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2); border: 1px solid #ccc; }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+            padding: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-icon {
+            font-size: 10px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+        }
+
+        .moon-icon {
+            color: #e0e0e0;
+            opacity: 1;
+        }
+
+        .sun-icon {
+            color: #ffd700;
+            opacity: 0.4;
+        }
+
+        .toggle-track {
+            width: 32px;
+            height: 16px;
+            background: linear-gradient(135deg, #666, #888);
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 0 1px 3px rgba(0,0,0,0.3),
+                0 1px 4px rgba(0,0,0,0.2);
+            border: 1px solid #555;
+        }
+
+        .toggle-thumb {
+            width: 13px;
+            height: 13px;
+            background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+            border-radius: 50%;
+            position: absolute;
+            top: 1.5px;
+            left: 1.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.3),
+                0 1px 2px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
+        }
 
         /* Dark mode active state */
-        body.dark-mode .toggle-track { background: linear-gradient(135deg, #BA0C2F, #d41e3a); border-color: #a00b28; }
-        body.dark-mode .toggle-thumb { transform: translateX(16px); background: linear-gradient(135deg, #ffffff, #f0f0f0); border-color: #ddd; }
-        body.dark-mode .moon-icon { opacity: 0.4; color: #b0b0b0; }
-        body.dark-mode .sun-icon { opacity: 1; color: #ffd700; }
+        body.dark-mode .toggle-track {
+            background: linear-gradient(135deg, #BA0C2F, #d41e3a);
+            border-color: #a00b28;
+        }
+
+        body.dark-mode .toggle-thumb {
+            transform: translateX(16px);
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            border-color: #ddd;
+        }
+
+        body.dark-mode .moon-icon {
+            opacity: 0.4;
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .sun-icon {
+            opacity: 1;
+            color: #ffd700;
+        }
 
         /* Hover effects */
-        .theme-toggle:hover .toggle-track { transform: scale(1.05); box-shadow: inset 0 1px 3px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.3); }
-        .theme-toggle:hover .toggle-thumb { box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3); }
-        body.dark-mode .theme-toggle:hover .toggle-track { background: linear-gradient(135deg, #d41e3a, #ff4d6d); }
-        .theme-toggle:active .toggle-track { transform: scale(0.98); }
-        .theme-toggle:active .toggle-thumb { transform: scale(0.95); }
-        body.dark-mode .theme-toggle:active .toggle-thumb { transform: translateX(16px) scale(0.95); }
+        .theme-toggle:hover .toggle-track {
+            transform: scale(1.05);
+            box-shadow: 
+                inset 0 1px 3px rgba(0,0,0,0.4),
+                0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .theme-toggle:hover .toggle-thumb {
+            box-shadow: 
+                0 2px 4px rgba(0,0,0,0.4),
+                0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .theme-toggle:hover .toggle-track {
+            background: linear-gradient(135deg, #d41e3a, #ff4d6d);
+        }
+
+        /* Active state */
+        .theme-toggle:active .toggle-track {
+            transform: scale(0.98);
+        }
+
+        .theme-toggle:active .toggle-thumb {
+            transform: scale(0.95);
+        }
+
+        body.dark-mode .theme-toggle:active .toggle-thumb {
+            transform: translateX(16px) scale(0.95);
+        }
 
         /* Dark Mode Styles */
-        body.dark-mode { background-color: #1a1a1a; color: #e0e0e0; transition: background-color 0.3s ease, color 0.3s ease; }
-        body.dark-mode, body.dark-mode * { background-color: #1a1a1a !important; }
-        body.dark-mode .n-header, body.dark-mode .n-article, body.dark-mode .testimonials-section, body.dark-mode .paper-item { background-color: #1a1a1a !important; }
-        html.dark-mode, html.dark-mode body { background-color: #1a1a1a !important; min-height: 100vh; }
-        html.dark-mode { background-color: #1a1a1a !important; }
-        body.dark-mode .n-title h1 { color: #e0e0e0; }
-        body.dark-mode .byline a { color: #b0b0b0; }
-        body.dark-mode .byline a:hover { color: #BA0C2F; }
-        body.dark-mode .separator { color: #666; }
-        body.dark-mode h3 { color: #e0e0e0; border-bottom-color: #404040; }
-        body.dark-mode .testimonial-header h4 { color: #e0e0e0; }
-        body.dark-mode .testimonial-arrow { color: #b0b0b0; }
-        body.dark-mode .testimonial-header:hover .testimonial-arrow { color: #BA0C2F; }
-        body.dark-mode .testimonial-content { background: #1a1a1a !important; color: #e0e0e0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-left: 4px groove #BA0C2F; }
-        body.dark-mode .testimonial-carousel { background: #1a1a1a !important; }
-        body.dark-mode .testimonial-container { background: #1a1a1a !important; }
-        body.dark-mode .testimonial-content-wrapper { background: #1a1a1a !important; }
-        body.dark-mode .dropdown-content { background: #1a1a1a !important; }
-        body.dark-mode .testimonial-text { color: #e0e0e0; }
-        body.dark-mode .paper-item p, body.dark-mode .dropdown-header p { color: #e0e0e0; }
-        body.dark-mode .dropdown-arrow { color: #b0b0b0; }
-        body.dark-mode .dropdown-header:hover .dropdown-arrow { color: #BA0C2F; }
-        body.dark-mode .dropdown-link { color: #BA0C2F; }
-        body.dark-mode .dropdown-link:hover { color: #ff4d6d; }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode,
+        body.dark-mode * {
+            background-color: #1a1a1a !important;
+        }
+
+        body.dark-mode .n-header,
+        body.dark-mode .n-article,
+        body.dark-mode .testimonials-section,
+        body.dark-mode .paper-item {
+            background-color: #1a1a1a !important;
+        }
+
+        /* Ensure full page coverage */
+        html.dark-mode,
+        html.dark-mode body {
+            background-color: #1a1a1a !important;
+            min-height: 100vh;
+        }
+
+        html.dark-mode {
+            background-color: #1a1a1a !important;
+        }
+
+        body.dark-mode .n-title h1 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .byline a {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .byline a:hover {
+            color: #BA0C2F;
+        }
+
+        body.dark-mode .separator {
+            color: #666;
+        }
+
+        body.dark-mode h3 {
+            color: #e0e0e0;
+            border-bottom-color: #404040;
+        }
+
+        body.dark-mode .testimonial-header h4 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .testimonial-arrow {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .testimonial-header:hover .testimonial-arrow {
+            color: #BA0C2F;
+        }
+
+        body.dark-mode .testimonial-content {
+            background: #1a1a1a !important;
+            color: #e0e0e0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-left: 4px groove #BA0C2F;
+        }
+
+        body.dark-mode .testimonial-carousel {
+            background: #1a1a1a !important;
+        }
+
+        body.dark-mode .testimonial-container {
+            background: #1a1a1a !important;
+        }
+
+        body.dark-mode .testimonial-content-wrapper {
+            background: #1a1a1a !important;
+        }
+
+        body.dark-mode .dropdown-content {
+            background: #1a1a1a !important;
+        }
+
+        body.dark-mode .testimonial-text {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .paper-item p {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .dropdown-header p {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .dropdown-arrow {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .dropdown-header:hover .dropdown-arrow {
+            color: #BA0C2F;
+        }
+
+        body.dark-mode .dropdown-link {
+            color: #BA0C2F;
+        }
+
+        body.dark-mode .dropdown-link:hover {
+            color: #ff4d6d;
+        }
 
         /* Original Styles */
-        h3 { font-size: 1.4em; color: #333; margin-top: 1rem; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; font-weight: 600; transition: color 0.3s ease, border-bottom-color 0.3s ease; }
-        .paper-item { margin-bottom: 1rem; }
-        .paper-item p { margin: 0; transition: color 0.3s ease; }
-        .byline { display: flex; align-items: center; justify-content: center; gap: 12px; }
-        .byline a { color: #999; text-decoration: none; font-weight: normal; letter-spacing: 2px; font-size: 1.5em; transition: color 0.3s ease; }
-        .byline a:hover { color: #BA0C2F; }
-        .separator { color: #ccc; font-weight: 300; transition: color 0.3s ease; }
+        h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 1rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 600;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
 
+        .paper-item {
+            margin-bottom: 1rem;
+        }
+
+        .paper-item p {
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .byline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .byline a {
+            color: #999;
+            text-decoration: none;
+            font-weight: normal;
+            letter-spacing: 2px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .byline a:hover {
+            color: #BA0C2F;
+        }
+
+        .separator {
+            color: #ccc;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+        
         /* Testimonials Section */
-        .testimonials-section { margin-bottom: 0; padding: 0; }
-
-        .testimonial-content-wrapper { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .testimonial-content-wrapper.open { max-height: 281px; }
-
-        .testimonial-carousel { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; height: 225px; position: relative; }
-        .testimonial-container { flex: 1; height: 187px; display: flex; align-items: center; justify-content: center; margin: 0 10px; }
-        .testimonial-content { background: #fff; border-left: 4px groove #BA0C2F; padding: 1.5rem; border-radius: 8px; position: relative; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; width: 100%; height: 100%; overflow-y: auto; display: flex; flex-direction: column; }
-        .quote-icon { color: #BA0C2F; font-size: 0.6em; margin-bottom: 10px; flex-shrink: 0; }
-        .testimonial-text { font-style: italic; line-height: 1.6; color: #333; margin: 0; font-size: 0.95em; text-align: justify; flex: 1; transition: color 0.3s ease; }
-
-        .carousel-btn { background: #BA0C2F; color: white; border: none; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 0.8em; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(186, 12, 47, 0.2); flex-shrink: 0; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
-        .prev-btn { left: 0; }
-        .next-btn { right: 0; }
-        .carousel-btn:hover { background: #8B0A24; transform: translateY(-50%) scale(1.1); box-shadow: 0 4px 15px rgba(186, 12, 47, 0.3); }
-        .carousel-btn:active { transform: translateY(-50%) scale(0.95); }
-
+        .testimonials-section {
+            margin-bottom: 0;
+            padding: 0;
+        }
+        
+        /* Section Header - contains both h3 and testimonial header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        body.dark-mode .section-header {
+            border-bottom-color: #404040;
+        }
+        
+        .section-header h3 {
+            margin-top: 1rem;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+            gap: 8px;
+        }
+        
+        .testimonial-header h4 {
+            margin: 0;
+            font-size: 1em;
+            color: #333;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .testimonial-arrow {
+            color: #666;
+            font-size: 1em;
+            transition: transform 0.3s ease, color 0.2s ease;
+        }
+        
+        .testimonial-header:hover .testimonial-arrow {
+            color: #BA0C2F;
+        }
+        
+        .testimonial-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .testimonial-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .testimonial-content-wrapper.open {
+            max-height: 281px;
+        }
+        
+        .testimonial-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+            height: 225px;
+            position: relative;
+        }
+        
+        .testimonial-container {
+            flex: 1;
+            height: 187px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+        
+        .testimonial-content {
+            background: #fff;
+            border-left: 4px groove #BA0C2F;
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .quote-icon {
+            color: #BA0C2F;
+            font-size: 0.6em;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            font-size: 0.95em;
+            text-align: justify;
+            flex: 1;
+            transition: color 0.3s ease;
+        }
+        
+        .carousel-btn {
+            background: #BA0C2F;
+            color: white;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(186, 12, 47, 0.2);
+            flex-shrink: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        
+        .prev-btn {
+            left: 0;
+        }
+        
+        .next-btn {
+            right: 0;
+        }
+        
+        .carousel-btn:hover {
+            background: #8B0A24;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.3);
+        }
+        
+        .carousel-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        
         /* Dropdown Styles */
-        .dropdown-item { transition: all 0.3s ease; margin-bottom: 0.5rem; }
-        .dropdown-header { display: flex; justify-content: space-between; align-items: baseline; cursor: pointer; transition: background-color 0.2s ease; padding: 8px 0; }
-        .dropdown-header:hover { background: rgba(186,12,47,0); }
-        .dropdown-header:hover .dropdown-arrow { color: #BA0C2F; }
-        .dropdown-header p { margin: 0; color: #333; flex: 1; padding-right: 15px; line-height: 1.3em; display: inline-block; transition: color 0.3s ease; }
-        .dropdown-arrow { color: #666; transition: transform 0.3s ease, color 0.2s ease; font-size: 0.9em; flex-shrink: 0; line-height: 1.3em; padding-top: 0.2em; }
-        .dropdown-arrow.rotated { transform: rotate(180deg); }
-        .dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: transparent; }
-        .dropdown-content.open { max-height: 200px; }
-        .dropdown-links { padding: 10px 0; }
-        .dropdown-link { display: block; padding: 8px 20px; margin-bottom: 4px; text-decoration: none; color: #BA0C2F; transition: all 0.2s ease; font-size: 0.95em; }
-        .dropdown-link:last-child { margin-bottom: 0; }
-        .dropdown-link:hover { color: #8B0A24; background: rgba(186,12,47,0); }
-        .dropdown-link i { color: #BA0C2F; width: 16px; font-size: 0.9em; }
-
-        /* Optional: collapse padding when testimonials are closed */
-        .dropdown-content:has(#testimonial-wrapper:not(.open)) { padding: 0; }
-
+        .dropdown-item {
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            padding: 8px 0;
+        }
+        
+        .dropdown-header:hover {
+            background: rgba(186,12,47,0);
+        }
+        
+        .dropdown-header:hover .dropdown-arrow {
+            color: #BA0C2F;
+        }
+        
+        .dropdown-header p {
+            margin: 0;
+            color: #333;
+            flex: 1;
+            padding-right: 15px;
+            line-height: 1.3em;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        .dropdown-arrow {
+            color: #666;
+            transition: transform 0.3s ease, color 0.2s ease;
+            font-size: 0.9em;
+            flex-shrink: 0;
+            line-height: 1.3em;
+            padding-top: 0.2em;
+        }
+        
+        .dropdown-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: transparent;
+        }
+        
+        .dropdown-content.open {
+            max-height: 200px;
+        }
+        
+        .dropdown-links {
+            padding: 10px 0;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: 8px 20px;
+            margin-bottom: 4px;
+            text-decoration: none;
+            color: #BA0C2F;
+            transition: all 0.2s ease;
+            font-size: 0.95em;
+        }
+        
+        .dropdown-link:last-child {
+            margin-bottom: 0;
+        }
+        
+        .dropdown-link:hover {
+            color: #8B0A24;
+            background: rgba(186,12,47,0);
+        }
+        
+        .dropdown-link i {
+            color: #BA0C2F;
+            width: 16px;
+            font-size: 0.9em;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
-            .dark-mode-toggle { top: 15px; right: 15px; }
-            .theme-toggle { gap: 6px; padding: 3px; }
-            .toggle-icon { font-size: 9px; }
-            .toggle-track { width: 28px; height: 14px; }
-            .toggle-thumb { width: 11px; height: 11px; }
-            body.dark-mode .toggle-thumb { transform: translateX(14px); }
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+            }
 
-            .testimonial-content-wrapper.open { max-height: 350px; }
-            .testimonial-carousel { height: 300px; flex-direction: column; gap: 15px; align-items: center; }
-            .testimonial-container { height: 200px; }
-            .carousel-btn { width: 40px; height: 40px; font-size: 1em; position: static; transform: none; }
-            .carousel-btn:hover { transform: scale(1.1); }
-            .carousel-btn:active { transform: scale(0.95); }
-            .testimonial-content { padding: 1rem; }
+            .theme-toggle {
+                gap: 6px;
+                padding: 3px;
+            }
+
+            .toggle-icon {
+                font-size: 9px;
+            }
+
+            .toggle-track {
+                width: 28px;
+                height: 14px;
+            }
+
+            .toggle-thumb {
+                width: 11px;
+                height: 11px;
+            }
+
+            body.dark-mode .toggle-thumb {
+                transform: translateX(14px);
+            }
+
+            .testimonial-content-wrapper.open {
+                max-height: 350px;
+            }
+            
+            .testimonial-carousel {
+                height: 300px;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .testimonial-container {
+                height: 200px;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+                position: static;
+                transform: none;
+            }
+            
+            .carousel-btn:hover {
+                transform: scale(1.1);
+            }
+            
+            .carousel-btn:active {
+                transform: scale(0.95);
+            }
+            
+            .testimonial-content {
+                padding: 1rem;
+            }
         }
     </style>
-
+    
     <script>
         // Initialize dark mode on page load
         document.addEventListener('DOMContentLoaded', function() {
@@ -243,7 +730,7 @@
             const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
             const body = document.body;
             const html = document.documentElement;
-
+            
             if (isDarkMode) {
                 body.classList.add('dark-mode');
                 html.classList.add('dark-mode');
@@ -256,43 +743,36 @@
         function toggleDarkMode() {
             const body = document.body;
             const html = document.documentElement;
-
+            
             body.classList.toggle('dark-mode');
             html.classList.toggle('dark-mode');
-
+            
             // Save preference to localStorage
             const isDarkMode = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
         }
 
-        // Fix: correctly map dropdownX -> arrowX for rotation
         function toggleDropdown(dropdownId) {
             const dropdown = document.getElementById(dropdownId);
-            const arrowId = dropdownId.replace('dropdown', 'arrow'); // e.g., dropdown1 -> arrow1
-            const arrow = document.getElementById(arrowId);
-
+            const arrow = document.getElementById('arrow' + dropdownId.replace('-', ''));
+            
             dropdown.classList.toggle('open');
-            if (arrow) arrow.classList.toggle('rotated');
+            arrow.classList.toggle('rotated');
         }
-
+        
         function toggleTestimonials() {
             const wrapper = document.getElementById('testimonial-wrapper');
             const arrow = document.getElementById('testimonial-arrow');
-            const dropdown = document.getElementById('testimonial-dropdown');
-
-            // Open/close the content area like other dropdowns
-            dropdown.classList.toggle('open');
-            // Animate the inner wrapper for smooth height
+            
             wrapper.classList.toggle('open');
-            // Rotate chevron
             arrow.classList.toggle('rotated');
-
+            
             // Initialize testimonials when opened for the first time
             if (wrapper.classList.contains('open')) {
                 displayTestimonial();
             }
         }
-
+        
         // Testimonials data
         const testimonials = [
             "I think this whole class was really well done! I feel like I learned a lot from this class. Professor Ahmad definitely knows what he is talking about and does a wonderful job of explaining the course material. The presentations, and other materials were also very useful to look back over which I really appreciated because I know not all professors allow students to have the lecture slides.",
@@ -317,17 +797,22 @@
             "The class was very well done. The content was very engaging. for improvements, I don't have any.",
             "This course was well taught and organized. The instructor randomly placed iClicker questions throughout his lectures, which forced attention to detail during lectures. This helped me further learn the information that was being taught in lectures. It can be improved upon by allowing multiple attempts for the end-of-chapter quizzes to further grasp the information in this course."
         ];
-
+        
         let currentTestimonial = 0;
-
+        
         function displayTestimonial() {
             document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
         }
-
+        
         function changeTestimonial(direction) {
             currentTestimonial += direction;
-            if (currentTestimonial >= testimonials.length) currentTestimonial = 0;
-            else if (currentTestimonial < 0) currentTestimonial = testimonials.length - 1;
+            
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            } else if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            }
+            
             displayTestimonial();
         }
     </script>
