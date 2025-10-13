@@ -1,670 +1,248 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="../media/favicon-196x196.png" rel="shortcut icon" />
-    <title> Noman Ahmad </title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../media/favicon-196x196.png" rel="shortcut icon" />
+  <title>Noman Ahmad</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Dark Mode Toggle Button -->
-    <div class="dark-mode-toggle">
-        <div class="theme-toggle" onclick="toggleDarkMode()">
-            <i class="fas fa-moon toggle-icon moon-icon"></i>
-            <div class="toggle-track">
-                <div class="toggle-thumb"></div>
-            </div>
-            <i class="fas fa-sun toggle-icon sun-icon"></i>
-        </div>
+  <!-- Dark Mode Toggle Button -->
+  <div class="dark-mode-toggle">
+    <div class="theme-toggle" onclick="toggleDarkMode()">
+      <i class="fas fa-moon toggle-icon moon-icon"></i>
+      <div class="toggle-track">
+        <div class="toggle-thumb"></div>
+      </div>
+      <i class="fas fa-sun toggle-icon sun-icon"></i>
+    </div>
+  </div>
+
+  <!-- SECTION: HEADER -->
+  <div class="n-header"></div>
+  <div class="n-title">
+    <h1>NOMAN AHMAD</h1>
+  </div>
+
+  <!-- SECTION: NAVIGATION -->
+  <div class="n-byline">
+    <div class="byline">
+      <span class="separator">|</span>
+      <a href="./">ABOUT</a>
+      <span class="separator">|</span>
+      <a href="research">RESEARCH</a>
+      <span class="separator">|</span>
+      <a href="teaching">TEACHING</a>
+      <span class="separator">|</span>
+    </div>
+  </div>
+
+  <!-- SECTION: MAIN BODY -->
+  <div class="n-article">
+
+    <div class="section-header">
+      <h3>Instructor of Record</h3>
+      <div class="testimonial-header" onclick="toggleTestimonials()">
+        <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
+        <h4 id="testimonial-title" class="testimonial-title">
+          Student Evaluations <span id="expand-label" class="nudge-expand">(Expand)</span>
+        </h4>
+      </div>
     </div>
 
-    <!-- SECTION: HEADER -->
-    <div class="n-header">
+    <!-- Student Testimonials -->
+    <div class="testimonials-section">
+      <div class="testimonial-content-wrapper" id="testimonial-wrapper">
+        <div class="testimonial-carousel">
+          <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="testimonial-container">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p class="testimonial-text" id="testimonial-text"></p>
+            </div>
+          </div>
+          <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="n-title">
-        <h1> NOMAN AHMAD </h1>
+
+    <div class="paper-item dropdown-item">
+      <div class="dropdown-header" onclick="toggleDropdown('dropdown1','arrow1')">
+        <p>Principles of Macroeconomics (ECON 2105) - Fall 2024</p>
+        <i class="fas fa-chevron-down dropdown-arrow" id="arrow1"></i>
+      </div>
+      <div class="dropdown-content" id="dropdown1">
+        <div class="dropdown-links">
+          <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">Teaching Evaluations</a>
+          <a href="files/Syllabus_ECON2105_Fall24.pdf" class="dropdown-link" target="_blank">Syllabus</a>
+          <a href="https://drive.google.com/drive/folders/1dtoSAIsCt3wxwtuNCjgxd6vQ0n9SqMbg?usp=sharing" class="dropdown-link" target="_blank">Course Slides</a>
+        </div>
+      </div>
     </div>
-    <!-- SECTION: AUTHORS -->
-    <div class="n-byline">
-        <div class="byline">
-            <span class="separator">|</span>
-            <a href="./">ABOUT</a>
-            <span class="separator">|</span>
-            <a href="research">RESEARCH</a>
-            <span class="separator">|</span>
-            <a href="teaching">TEACHING</a>
-            <span class="separator">|</span>
+
+    <div class="paper-item dropdown-item">
+      <div class="dropdown-header" onclick="toggleDropdown('dropdown2','arrow2')">
+        <p>Principles of Macroeconomics (ECON 2105) - Fall 2023</p>
+        <i class="fas fa-chevron-down dropdown-arrow" id="arrow2"></i>
+      </div>
+      <div class="dropdown-content" id="dropdown2">
+        <div class="dropdown-links">
+          <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">Teaching Evaluations</a>
+          <a href="files/Syllabus_ECON2105_Fall23.pdf" class="dropdown-link" target="_blank">Syllabus</a>
         </div>
+      </div>
     </div>
-    <!-- SECTION: MAIN BODY -->
-    <div class="n-article">
-        
-        <div class="section-header">
-            <h3>Instructor of Record</h3>
-            <div class="testimonial-header" onclick="toggleTestimonials()">
-                <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
-                <h4 id="testimonial-title" class="nudge">Student Evaluations (Expand)</h4>
-            </div>
-        </div>
-        
-        <!-- Student Testimonials Section -->
-        <div class="testimonials-section">
-            <div class="testimonial-content-wrapper" id="testimonial-wrapper">
-                <div class="testimonial-carousel">
-                    <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="testimonial-container">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="testimonial-text" id="testimonial-text"></p>
-                        </div>
-                    </div>
-                    <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="paper-item dropdown-item">
-            <div class="dropdown-header" onclick="toggleDropdown('dropdown1','arrow1')">
-                <p>Principles of Macroeconomics (ECON 2105) - Fall 2024</p>
-                <i class="fas fa-chevron-down dropdown-arrow" id="arrow1"></i>
-            </div>
-            <div class="dropdown-content" id="dropdown1">
-                <div class="dropdown-links">
-                    <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">
-                        Teaching Evaluations
-                    </a>
-                    <a href="files/Syllabus_ECON2105_Fall24.pdf" class="dropdown-link" target="_blank">
-                        Syllabus
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1dtoSAIsCt3wxwtuNCjgxd6vQ0n9SqMbg?usp=sharing" class="dropdown-link" target="_blank">
-                        Course Slides
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="paper-item dropdown-item">
-            <div class="dropdown-header" onclick="toggleDropdown('dropdown2','arrow2')">
-                <p>Principles of Macroeconomics (ECON 2105) - Fall 2023</p>
-                <i class="fas fa-chevron-down dropdown-arrow" id="arrow2"></i>
-            </div>
-            <div class="dropdown-content" id="dropdown2">
-                <div class="dropdown-links">
-                    <a href="files/Course_Evaluation_Noman.pdf" class="dropdown-link" target="_blank">
-                        Teaching Evaluations
-                    </a>
-                    <a href="files/Syllabus_ECON2105_Fall23.pdf" class="dropdown-link" target="_blank">
-                        Syllabus
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <h3>Teaching Assistant</h3>
 
-        <div class="paper-item">
-            <p>Introduction to Econometrics (ECON 6750) - Fall 2025</p>
-        </div>
-        
-        <div class="paper-item">
-            <p>Introduction to Sustainable Development (ECON 3100) - Fall 2025 </p>
-        </div>
-        
-        <div class="paper-item">
-            <p>Intermediate Macroeconomics (ECON 4020) - Spring 2025</p>
-        </div>
-        
-        <div class="paper-item">
-            <p>Intermediate Macroeconomics (ECON 4020) - Spring 2024</p>
-        </div>
-        
-        <div class="paper-item">
-            <p>Intermediate Macroeconomics (ECON 4020) - Spring 2023</p>
-        </div>
-        
-        <div class="paper-item">
-            <p>Economic Analysis for Business (EMBA 7010) - Fall 2022</p>
-        </div>
-    </div>
-    
-    <style>
-        /* Dark Mode Toggle Switch - Updated Design */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+    <h3>Teaching Assistant</h3>
+    <div class="paper-item"><p>Introduction to Econometrics (ECON 6750) - Fall 2025</p></div>
+    <div class="paper-item"><p>Introduction to Sustainable Development (ECON 3100) - Fall 2025</p></div>
+    <div class="paper-item"><p>Intermediate Macroeconomics (ECON 4020) - Spring 2025</p></div>
+    <div class="paper-item"><p>Intermediate Macroeconomics (ECON 4020) - Spring 2024</p></div>
+    <div class="paper-item"><p>Intermediate Macroeconomics (ECON 4020) - Spring 2023</p></div>
+    <div class="paper-item"><p>Economic Analysis for Business (EMBA 7010) - Fall 2022</p></div>
+  </div>
 
-        .theme-toggle {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            user-select: none;
-            padding: 4px;
-            transition: all 0.3s ease;
-        }
+  <style>
+    /* --- (Expand) Innovative Attention Animation --- */
+    @keyframes flashColors {
+      0%, 20%, 40%, 60%, 80%, 100% { color: #000; transform: translateY(0) scale(1); }
+      10%, 30%, 50%, 70%, 90% { color: #BA0C2F; transform: translateY(-0.5px) scale(1.03); }
+    }
+    @keyframes ugaPulse {
+      0%, 100% { color: #000; text-shadow: none; }
+      50% { color: #BA0C2F; text-shadow: 0 0 4px rgba(186,12,47,0.25); }
+    }
+    @keyframes underlineGrow {
+      0% { background-size: 0% 2px; }
+      60% { background-size: 100% 2px; }
+      100% { background-size: 60% 2px; }
+    }
+    @keyframes microTilt {
+      0%, 96%, 100% { transform: rotate(0deg); }
+      97% { transform: rotate(-2deg); }
+      98.5% { transform: rotate(2deg); }
+      99.5% { transform: rotate(-1deg); }
+    }
+    @keyframes chevronPeek {
+      0%, 96%, 100% { transform: translateX(0); }
+      97% { transform: translateX(1px); }
+      98.5% { transform: translateX(-1px); }
+      99.5% { transform: translateX(0.5px); }
+    }
 
-        .toggle-icon {
-            font-size: 10px;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
-        }
+    .nudge-expand {
+      display: inline-block;
+      cursor: pointer;
+      animation:
+        flashColors 2.2s linear 0s 1,
+        ugaPulse 6s ease-in-out 2.2s infinite,
+        microTilt 30s ease-in-out 8s infinite;
+      text-shadow: 0 0 0.01px currentColor;
+      position: relative;
+    }
+    .nudge-expand::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 2px;
+      background-image: linear-gradient(90deg, #000, #BA0C2F);
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      animation: underlineGrow 4s ease 2.2s infinite;
+      opacity: 0.9;
+    }
+    body.dark-mode .nudge-expand::after {
+      background-image: linear-gradient(90deg, #e0e0e0, #BA0C2F);
+    }
+    .chevron-nudge { animation: chevronPeek 30s ease 10s infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .nudge-expand, .nudge-expand::after { animation: none !important; }
+    }
 
-        .moon-icon {
-            color: #e0e0e0;
-            opacity: 1;
-        }
+    /* --- Keep your previous styles --- */
+    body.dark-mode { background:#1a1a1a; color:#e0e0e0; transition:.3s; }
+    .byline a:hover { color:#BA0C2F; }
+    h3 { border-bottom:2px solid #e0e0e0; }
+    .testimonial-header { display:flex; gap:8px; align-items:center; cursor:pointer; }
+    .testimonial-header h4 { margin:0; font-weight:400; color:#333; }
+    .testimonial-arrow { color:#666; transition:.3s; }
+    .testimonial-arrow.rotated { transform:rotate(180deg); }
+    .testimonial-content-wrapper { max-height:0; overflow:hidden; transition:.3s; }
+    .testimonial-content-wrapper.open { max-height:281px; }
+    .testimonial-content { border-left:4px groove #BA0C2F; padding:1.5rem; border-radius:8px; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+    .testimonial-text { font-style:italic; line-height:1.6; color:#333; }
+    .carousel-btn { background:#BA0C2F; color:#fff; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; }
+  </style>
 
-        .sun-icon {
-            color: #ffd700;
-            opacity: 0.4;
-        }
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeDarkMode();
+      const title = document.getElementById('testimonial-title');
+      const expand = document.getElementById('expand-label');
+      const arrow  = document.getElementById('testimonial-arrow');
+      expand.textContent = '(Expand)';
+      expand.classList.add('nudge-expand');
+      arrow.classList.add('chevron-nudge');
+    });
 
-        .toggle-track {
-            width: 32px;
-            height: 16px;
-            background: linear-gradient(135deg, #666, #888);
-            border-radius: 12px;
-            position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 
-                inset 0 1px 3px rgba(0,0,0,0.3),
-                0 1px 4px rgba(0,0,0,0.2);
-            border: 1px solid #555;
-        }
+    function initializeDarkMode() {
+      const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
+      document.body.classList.toggle('dark-mode', isDarkMode);
+      document.documentElement.classList.toggle('dark-mode', isDarkMode);
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.documentElement.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', JSON.stringify(document.body.classList.contains('dark-mode')));
+    }
+    function toggleDropdown(dropdownId, arrowId) {
+      const dropdown = document.getElementById(dropdownId);
+      const arrow = document.getElementById(arrowId);
+      dropdown.classList.toggle('open');
+      arrow.classList.toggle('rotated');
+    }
 
-        .toggle-thumb {
-            width: 13px;
-            height: 13px;
-            background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
-            border-radius: 50%;
-            position: absolute;
-            top: 1.5px;
-            left: 1.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 
-                0 1px 3px rgba(0,0,0,0.3),
-                0 1px 2px rgba(0,0,0,0.2);
-            border: 1px solid #ccc;
-        }
+    function toggleTestimonials() {
+      const wrapper = document.getElementById('testimonial-wrapper');
+      const arrow   = document.getElementById('testimonial-arrow');
+      const expand  = document.getElementById('expand-label');
+      wrapper.classList.toggle('open');
+      arrow.classList.toggle('rotated');
 
-        /* Dark mode active state */
-        body.dark-mode .toggle-track {
-            background: linear-gradient(135deg, #BA0C2F, #d41e3a);
-            border-color: #a00b28;
-        }
+      if (wrapper.classList.contains('open')) {
+        expand.textContent = '(Collapse)';
+        expand.classList.remove('nudge-expand');
+        arrow.classList.remove('chevron-nudge');
+        displayTestimonial();
+      } else {
+        expand.textContent = '(Expand)';
+        void expand.offsetWidth; // restart animation
+        expand.classList.add('nudge-expand');
+        arrow.classList.add('chevron-nudge');
+      }
+    }
 
-        body.dark-mode .toggle-thumb {
-            transform: translateX(16px);
-            background: linear-gradient(135deg, #ffffff, #f0f0f0);
-            border-color: #ddd;
-        }
-
-        body.dark-mode .moon-icon {
-            opacity: 0.4;
-            color: #b0b0b0;
-        }
-
-        body.dark-mode .sun-icon {
-            opacity: 1;
-            color: #ffd700;
-        }
-
-        /* Hover effects */
-        .theme-toggle:hover .toggle-track {
-            transform: scale(1.05);
-            box-shadow: 
-                inset 0 1px 3px rgba(0,0,0,0.4),
-                0 2px 6px rgba(0,0,0,0.3);
-        }
-
-        .theme-toggle:hover .toggle-thumb {
-            box-shadow: 
-                0 2px 4px rgba(0,0,0,0.4),
-                0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        body.dark-mode .theme-toggle:hover .toggle-track {
-            background: linear-gradient(135deg, #d41e3a, #ff4d6d);
-        }
-
-        /* Active state */
-        .theme-toggle:active .toggle-track {
-            transform: scale(0.98);
-        }
-
-        .theme-toggle:active .toggle-thumb {
-            transform: scale(0.95);
-        }
-
-        body.dark-mode .theme-toggle:active .toggle-thumb {
-            transform: translateX(16px) scale(0.95);
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body.dark-mode,
-        body.dark-mode * {
-            background-color: #1a1a1a !important;
-        }
-
-        body.dark-mode .n-header,
-        body.dark-mode .n-article,
-        body.dark-mode .testimonials-section,
-        body.dark-mode .paper-item {
-            background-color: #1a1a1a !important;
-        }
-
-        /* Ensure full page coverage */
-        html.dark-mode,
-        html.dark-mode body {
-            background-color: #1a1a1a !important;
-            min-height: 100vh;
-        }
-
-        html.dark-mode {
-            background-color: #1a1a1a !important;
-        }
-
-        body.dark-mode .n-title h1 {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .byline a {
-            color: #b0b0b0;
-        }
-
-        body.dark-mode .byline a:hover {
-            color: #BA0C2F;
-        }
-
-        body.dark-mode .separator {
-            color: #666;
-        }
-
-        body.dark-mode h3 {
-            color: #e0e0e0;
-            border-bottom-color: #404040;
-        }
-
-        body.dark-mode .testimonial-header h4 {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .testimonial-arrow {
-            color: #b0b0b0;
-        }
-
-        body.dark-mode .testimonial-header:hover .testimonial-arrow {
-            color: #BA0C2F;
-        }
-
-        body.dark-mode .testimonial-content {
-            background: #1a1a1a !important;
-            color: #e0e0e0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            border-left: 4px groove #BA0C2F;
-        }
-
-        body.dark-mode .testimonial-carousel,
-        body.dark-mode .testimonial-container,
-        body.dark-mode .testimonial-content-wrapper,
-        body.dark-mode .dropdown-content {
-            background: #1a1a1a !important;
-        }
-
-        body.dark-mode .testimonial-text,
-        body.dark-mode .paper-item p,
-        body.dark-mode .dropdown-header p {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .dropdown-arrow {
-            color: #b0b0b0;
-        }
-
-        body.dark-mode .dropdown-header:hover .dropdown-arrow {
-            color: #BA0C2F;
-        }
-
-        body.dark-mode .dropdown-link {
-            color: #BA0C2F;
-        }
-
-        body.dark-mode .dropdown-link:hover {
-            color: #ff4d6d;
-        }
-
-        /* Original Styles */
-        h3 {
-            font-size: 1.4em;
-            color: #333;
-            margin-top: 1rem;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e0e0e0;
-            font-weight: 600;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-        }
-
-        .paper-item { margin-bottom: 1rem; }
-        .paper-item p { margin: 0; transition: color 0.3s ease; }
-        
-        .byline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-        .byline a {
-            color: #999;
-            text-decoration: none;
-            font-weight: normal;
-            letter-spacing: 2px;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-        .byline a:hover { color: #BA0C2F; }
-        .separator { color: #ccc; font-weight: 300; transition: color 0.3s ease; }
-        
-        /* Testimonials Section */
-        .testimonials-section { margin-bottom: 0; padding: 0; }
-        
-        /* Section Header - contains both h3 and testimonial header */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-        body.dark-mode .section-header { border-bottom-color: #404040; }
-        .section-header h3 { margin-top: 1rem; margin-bottom: 0; border-bottom: none; }
-        
-        .testimonial-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.3s ease;
-            gap: 8px;
-        }
-        .testimonial-header h4 {
-            margin: 0;
-            font-size: 1em;
-            color: #333;
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-        .testimonial-arrow { color: #666; font-size: 1em; transition: transform 0.3s ease, color 0.2s ease; }
-        .testimonial-header:hover .testimonial-arrow { color: #BA0C2F; }
-        .testimonial-arrow.rotated { transform: rotate(180deg); }
-        
-        .testimonial-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .testimonial-content-wrapper.open { max-height: 281px; }
-        
-        .testimonial-carousel {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 20px 0;
-            height: 225px;
-            position: relative;
-        }
-        .testimonial-container {
-            flex: 1;
-            height: 187px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 10px;
-        }
-        .testimonial-content {
-            background: #fff;
-            border-left: 4px groove #BA0C2F;
-            padding: 1.5rem;
-            border-radius: 8px;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        .quote-icon { color: #BA0C2F; font-size: 0.6em; margin-bottom: 10px; flex-shrink: 0; }
-        .testimonial-text {
-            font-style: italic;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            font-size: 0.95em;
-            text-align: justify;
-            flex: 1;
-            transition: color 0.3s ease;
-        }
-        
-        .carousel-btn {
-            background: #BA0C2F;
-            color: white;
-            border: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.8em;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(186, 12, 47, 0.2);
-            flex-shrink: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-        }
-        .prev-btn { left: 0; }
-        .next-btn { right: 0; }
-        .carousel-btn:hover {
-            background: #8B0A24;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 4px 15px rgba(186, 12, 47, 0.3);
-        }
-        .carousel-btn:active { transform: translateY(-50%) scale(0.95); }
-        
-        /* Dropdown Styles */
-        .dropdown-item { transition: all 0.3s ease; margin-bottom: 0.5rem; }
-        .dropdown-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            padding: 8px 0;
-        }
-        .dropdown-header:hover { background: rgba(186,12,47,0); }
-        .dropdown-header:hover .dropdown-arrow { color: #BA0C2F; }
-        .dropdown-header p { margin: 0; color: #333; flex: 1; padding-right: 15px; line-height: 1.3em; display: inline-block; transition: color 0.3s ease; }
-        .dropdown-arrow { color: #666; transition: transform 0.3s ease, color 0.2s ease; font-size: 0.9em; flex-shrink: 0; line-height: 1.3em; padding-top: 0.2em; }
-        .dropdown-arrow.rotated { transform: rotate(180deg); }
-        .dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: transparent; }
-        .dropdown-content.open { max-height: 200px; }
-        .dropdown-links { padding: 10px 0; }
-        .dropdown-link {
-            display: block;
-            padding: 8px 20px;
-            margin-bottom: 4px;
-            text-decoration: none;
-            color: #BA0C2F;
-            transition: all 0.2s ease;
-            font-size: 0.95em;
-        }
-        .dropdown-link:last-child { margin-bottom: 0; }
-        .dropdown-link:hover { color: #8B0A24; background: rgba(186,12,47,0); }
-        .dropdown-link i { color: #BA0C2F; width: 16px; font-size: 0.9em; }
-
-        /* --- Gentle attention pulse for the (Expand) title --- */
-        @keyframes ugaPulse {
-            0%, 100% { color: #000; }
-            50%       { color: #BA0C2F; }
-        }
-        /* Respect users who prefer reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .nudge { animation: none !important; }
-        }
-        /* Start after 3s; slow 6s loop; only when collapsed (class .nudge present) */
-        .nudge {
-            animation: ugaPulse 6s ease-in-out 3s infinite;
-            text-shadow: 0 0 0.01px currentColor; /* tiny hint for contrast on some displays */
-        }
-        body.dark-mode .nudge {
-            /* keep the same colors but ensure readability on dark bg */
-            text-shadow: 0 0 6px rgba(255,255,255,0.06);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .dark-mode-toggle { top: 15px; right: 15px; }
-            .theme-toggle { gap: 6px; padding: 3px; }
-            .toggle-icon { font-size: 9px; }
-            .toggle-track { width: 28px; height: 14px; }
-            .toggle-thumb { width: 11px; height: 11px; }
-            body.dark-mode .toggle-thumb { transform: translateX(14px); }
-
-            .testimonial-content-wrapper.open { max-height: 350px; }
-            .testimonial-carousel {
-                height: 300px;
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-            .testimonial-container { height: 200px; }
-            .carousel-btn {
-                width: 40px; height: 40px; font-size: 1em; position: static; transform: none;
-            }
-            .carousel-btn:hover { transform: scale(1.1); }
-            .carousel-btn:active { transform: scale(0.95); }
-            .testimonial-content { padding: 1rem; }
-        }
-    </style>
-    
-    <script>
-        // Initialize dark mode on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDarkMode();
-            // ensure initial label state & nudge are correct on load (collapsed by default)
-            const title = document.getElementById('testimonial-title');
-            title.textContent = 'Student Evaluations (Expand)';
-            title.classList.add('nudge');
-        });
-
-        function initializeDarkMode() {
-            const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
-            const body = document.body;
-            const html = document.documentElement;
-            if (isDarkMode) {
-                body.classList.add('dark-mode');
-                html.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                html.classList.remove('dark-mode');
-            }
-        }
-
-        function toggleDarkMode() {
-            const body = document.body;
-            const html = document.documentElement;
-            body.classList.toggle('dark-mode');
-            html.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', JSON.stringify(body.classList.contains('dark-mode')));
-        }
-
-        // Updated: accept both dropdown & arrow IDs to avoid ID math bugs
-        function toggleDropdown(dropdownId, arrowId) {
-            const dropdown = document.getElementById(dropdownId);
-            const arrow = document.getElementById(arrowId);
-            if (!dropdown || !arrow) return;
-            dropdown.classList.toggle('open');
-            arrow.classList.toggle('rotated');
-        }
-        
-        function toggleTestimonials() {
-            const wrapper = document.getElementById('testimonial-wrapper');
-            const arrow = document.getElementById('testimonial-arrow');
-            const title = document.getElementById('testimonial-title');
-
-            wrapper.classList.toggle('open');
-            arrow.classList.toggle('rotated');
-
-            if (wrapper.classList.contains('open')) {
-                // opened → show Collapse, stop the gentle pulse
-                title.textContent = 'Student Evaluations (Collapse)';
-                title.classList.remove('nudge');
-                displayTestimonial();
-            } else {
-                // closed → show Expand, restart the gentle pulse
-                title.textContent = 'Student Evaluations (Expand)';
-                // force reflow to restart animation cleanly
-                void title.offsetWidth;
-                title.classList.add('nudge');
-            }
-        }
-        
-        // Testimonials data
-        const testimonials = [
-            "I think this whole class was really well done! I feel like I learned a lot from this class. Professor Ahmad definitely knows what he is talking about and does a wonderful job of explaining the course material. The presentations, and other materials were also very useful to look back over which I really appreciated because I know not all professors allow students to have the lecture slides.",
-            "I thought our professor did a good job of teaching the material and he is very knowledgeable on economics.",
-            "Professor Ahmad did an excellent job on helping us understand the material he was teaching with multiple example that were connected back to the real life making it a fun and interesting class. I looked forward to going to his class as he would always be willing to help and was always well in responding back with emails. He explained concepts multiple times if we did not get it the first time and his assignments aligned well with the content. I would definitely take him again. There was nothing I believed needed great improvement because everything was done well.",
-            "He was very informative but sometimes got off topic. The professor was very good and does not need any improvement.",
-            "He did a great job at making sure we knew everything that was necessary to know plus more! I think he could have mixed up the formats of lessons at times.",
-            "Did a good job at making sure students were participating and engaging with course material. Teaching style is a little hard to follow.",
-            "Used class time efficiently and challenged students to participate through class.",
-            "He was accessible outside of class and never made you feel bad for asking questions.",
-            "I really liked when there were real world examples, I think that when they were too complicated it was confusing though.",
-            "The professor was very accessible to students who needed help and/or had questions in class. He was very fair in grading and assignment timing. The only way I possibly see room for improvement is by being a little more engaging in presenting the material to students.",
-            "He did a very good job this semester, and I learned a lot.",
-            "I think that the ways he explained topics and connected it to real-world examples helped me understand the course well.",
-            "The instructor was very nice, it was his first time teaching this class but he made it as comprehensive as he could. He was invested in making sure you understood the material to make sure you do well on the test. The instructor made sure to not make this course one that would stress you out.",
-            "I liked that I could ask the professor any questions that I had and he would be happy to give me positive feedback in helping me understand the question.",
-            "I thought the tests were very fair and we were well-prepared for them. Also, the lectures were really interesting and the homework helped me learn. I don't have any suggestions for improvement!",
-            "The instructor for this course had great slides to organize the information presented in this course. He was also very engaging and made the course interesting. The instructor does not need to do anything to improve.",
-            "The instructor was always willing to answer questions and responded in a timely manner to emails.",
-            "He's an incredibly kind, intelligent, and caring professor! Not only was he great at teaching, but I feel like his class is graded pretty fairly. Only thing I would improve on is maybe trying to make the class a bit more interactive other than just the iclickers? I'm personally not interested in economics at all, but he made macroeconomics easy to understand.",
-            "He teaches thoroughly and slowly which is good. More in-class practice would be helpful.",
-            "The class was very well done. The content was very engaging. for improvements, I don't have any.",
-            "This course was well taught and organized. The instructor randomly placed iClicker questions throughout his lectures, which forced attention to detail during lectures. This helped me further learn the information that was being taught in lectures. It can be improved upon by allowing multiple attempts for the end-of-chapter quizzes to further grasp the information in this course."
-        ];
-        
-        let currentTestimonial = 0;
-        function displayTestimonial() {
-            document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
-        }
-        function changeTestimonial(direction) {
-            currentTestimonial += direction;
-            if (currentTestimonial >= testimonials.length) currentTestimonial = 0;
-            else if (currentTestimonial < 0) currentTestimonial = testimonials.length - 1;
-            displayTestimonial();
-        }
-    </script>
+    const testimonials = [
+      "I think this whole class was really well done! ...",
+      "Professor Ahmad did an excellent job on helping us understand ...",
+      "He was accessible outside of class and never made you feel bad for asking questions.",
+      "He's an incredibly kind, intelligent, and caring professor!"
+    ];
+    let currentTestimonial = 0;
+    function displayTestimonial() {
+      document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
+    }
+    function changeTestimonial(dir) {
+      currentTestimonial = (currentTestimonial + dir + testimonials.length) % testimonials.length;
+      displayTestimonial();
+    }
+  </script>
 </body>
 </html>
