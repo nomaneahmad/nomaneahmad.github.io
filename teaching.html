@@ -527,8 +527,10 @@
 
         /* --- Gentle attention pulse for the (Expand) title --- */
         @keyframes ugaPulse {
-            0%, 100% { color: #000; }
-            50%       { color: #BA0C2F; }
+            0%   { color: #000; }
+            33%   { color: #0074D9; }
+            66%   { color: #BA0C2F; }
+            100%   { color: #000; }
         }
         /* Respect users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
@@ -536,7 +538,7 @@
         }
         /* Start after 3s; slow 6s loop; only when collapsed (class .nudge present) */
         .nudge {
-            animation: ugaPulse 1s ease-in-out 0.25s infinite;
+            animation: ugaPulse 2s ease-in-out 1s infinite;
             text-shadow: 0 0 0.01px currentColor; /* tiny hint for contrast on some displays */
         }
         body.dark-mode .nudge {
