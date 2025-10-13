@@ -44,31 +44,30 @@
         
         <div class="section-header">
             <h3>Instructor of Record</h3>
-            <div class="testimonial-header" onclick="toggleTestimonials()">
-                <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
-                <h4>Selected Student Evaluations</h4>
-            </div>
-        </div>
+<div class="testimonial-header" onclick="toggleTestimonials()">
+    <i class="fas fa-chevron-down testimonial-arrow rotated" id="testimonial-arrow"></i>
+    <h4>Selected Student Evaluations</h4>
+</div>
         
-        <!-- Student Testimonials Section -->
-        <div class="testimonials-section">
-            <div class="testimonial-content-wrapper" id="testimonial-wrapper">
-                <div class="testimonial-carousel">
-                    <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="testimonial-container">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="testimonial-text" id="testimonial-text"></p>
-                        </div>
-                    </div>
-                    <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+<!-- Student Testimonials Section -->
+<div class="testimonials-section">
+    <div class="testimonial-content-wrapper open" id="testimonial-wrapper">
+        <div class="testimonial-carousel">
+            <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonial-container">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text" id="testimonial-text"></p>
                 </div>
             </div>
+            <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
+    </div>
+</div>
         
         <div class="paper-item dropdown-item">
             <div class="dropdown-header" onclick="toggleDropdown('dropdown1')">
