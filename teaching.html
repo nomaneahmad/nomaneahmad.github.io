@@ -46,7 +46,7 @@
             <h3>Instructor of Record</h3>
             <div class="testimonial-header" onclick="toggleTestimonials()">
                 <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
-                <h4>Selected Student Evaluations</h4>
+                <h4 id="testimonial-title" class="nudge">Student Evaluations (Expand)</h4>
             </div>
         </div>
         
@@ -71,7 +71,7 @@
         </div>
         
         <div class="paper-item dropdown-item">
-            <div class="dropdown-header" onclick="toggleDropdown('dropdown1')">
+            <div class="dropdown-header" onclick="toggleDropdown('dropdown1','arrow1')">
                 <p>Principles of Macroeconomics (ECON 2105) - Fall 2024</p>
                 <i class="fas fa-chevron-down dropdown-arrow" id="arrow1"></i>
             </div>
@@ -91,7 +91,7 @@
         </div>
         
         <div class="paper-item dropdown-item">
-            <div class="dropdown-header" onclick="toggleDropdown('dropdown2')">
+            <div class="dropdown-header" onclick="toggleDropdown('dropdown2','arrow2')">
                 <p>Principles of Macroeconomics (ECON 2105) - Fall 2023</p>
                 <i class="fas fa-chevron-down dropdown-arrow" id="arrow2"></i>
             </div>
@@ -320,30 +320,15 @@
             border-left: 4px groove #BA0C2F;
         }
 
-        body.dark-mode .testimonial-carousel {
-            background: #1a1a1a !important;
-        }
-
-        body.dark-mode .testimonial-container {
-            background: #1a1a1a !important;
-        }
-
-        body.dark-mode .testimonial-content-wrapper {
-            background: #1a1a1a !important;
-        }
-
+        body.dark-mode .testimonial-carousel,
+        body.dark-mode .testimonial-container,
+        body.dark-mode .testimonial-content-wrapper,
         body.dark-mode .dropdown-content {
             background: #1a1a1a !important;
         }
 
-        body.dark-mode .testimonial-text {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .paper-item p {
-            color: #e0e0e0;
-        }
-
+        body.dark-mode .testimonial-text,
+        body.dark-mode .paper-item p,
         body.dark-mode .dropdown-header p {
             color: #e0e0e0;
         }
@@ -376,14 +361,8 @@
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
 
-        .paper-item {
-            margin-bottom: 1rem;
-        }
-
-        .paper-item p {
-            margin: 0;
-            transition: color 0.3s ease;
-        }
+        .paper-item { margin-bottom: 1rem; }
+        .paper-item p { margin: 0; transition: color 0.3s ease; }
         
         .byline {
             display: flex;
@@ -391,7 +370,6 @@
             justify-content: center;
             gap: 12px;
         }
-
         .byline a {
             color: #999;
             text-decoration: none;
@@ -400,22 +378,11 @@
             font-size: 1.5em;
             transition: color 0.3s ease;
         }
-
-        .byline a:hover {
-            color: #BA0C2F;
-        }
-
-        .separator {
-            color: #ccc;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
+        .byline a:hover { color: #BA0C2F; }
+        .separator { color: #ccc; font-weight: 300; transition: color 0.3s ease; }
         
         /* Testimonials Section */
-        .testimonials-section {
-            margin-bottom: 0;
-            padding: 0;
-        }
+        .testimonials-section { margin-bottom: 0; padding: 0; }
         
         /* Section Header - contains both h3 and testimonial header */
         .section-header {
@@ -425,16 +392,8 @@
             margin-bottom: 20px;
             border-bottom: 2px solid #e0e0e0;
         }
-        
-        body.dark-mode .section-header {
-            border-bottom-color: #404040;
-        }
-        
-        .section-header h3 {
-            margin-top: 1rem;
-            margin-bottom: 0;
-            border-bottom: none;
-        }
+        body.dark-mode .section-header { border-bottom-color: #404040; }
+        .section-header h3 { margin-top: 1rem; margin-bottom: 0; border-bottom: none; }
         
         .testimonial-header {
             display: flex;
@@ -446,7 +405,6 @@
             transition: all 0.3s ease;
             gap: 8px;
         }
-        
         .testimonial-header h4 {
             margin: 0;
             font-size: 1em;
@@ -454,30 +412,16 @@
             font-weight: 400;
             transition: color 0.3s ease;
         }
-        
-        .testimonial-arrow {
-            color: #666;
-            font-size: 1em;
-            transition: transform 0.3s ease, color 0.2s ease;
-        }
-        
-        .testimonial-header:hover .testimonial-arrow {
-            color: #BA0C2F;
-        }
-        
-        .testimonial-arrow.rotated {
-            transform: rotate(180deg);
-        }
+        .testimonial-arrow { color: #666; font-size: 1em; transition: transform 0.3s ease, color 0.2s ease; }
+        .testimonial-header:hover .testimonial-arrow { color: #BA0C2F; }
+        .testimonial-arrow.rotated { transform: rotate(180deg); }
         
         .testimonial-content-wrapper {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-        
-        .testimonial-content-wrapper.open {
-            max-height: 281px;
-        }
+        .testimonial-content-wrapper.open { max-height: 281px; }
         
         .testimonial-carousel {
             display: flex;
@@ -488,7 +432,6 @@
             height: 225px;
             position: relative;
         }
-        
         .testimonial-container {
             flex: 1;
             height: 187px;
@@ -497,7 +440,6 @@
             justify-content: center;
             margin: 0 10px;
         }
-        
         .testimonial-content {
             background: #fff;
             border-left: 4px groove #BA0C2F;
@@ -512,14 +454,7 @@
             display: flex;
             flex-direction: column;
         }
-        
-        .quote-icon {
-            color: #BA0C2F;
-            font-size: 0.6em;
-            margin-bottom: 10px;
-            flex-shrink: 0;
-        }
-        
+        .quote-icon { color: #BA0C2F; font-size: 0.6em; margin-bottom: 10px; flex-shrink: 0; }
         .testimonial-text {
             font-style: italic;
             line-height: 1.6;
@@ -548,31 +483,17 @@
             transform: translateY(-50%);
             z-index: 10;
         }
-        
-        .prev-btn {
-            left: 0;
-        }
-        
-        .next-btn {
-            right: 0;
-        }
-        
+        .prev-btn { left: 0; }
+        .next-btn { right: 0; }
         .carousel-btn:hover {
             background: #8B0A24;
             transform: translateY(-50%) scale(1.1);
             box-shadow: 0 4px 15px rgba(186, 12, 47, 0.3);
         }
-        
-        .carousel-btn:active {
-            transform: translateY(-50%) scale(0.95);
-        }
+        .carousel-btn:active { transform: translateY(-50%) scale(0.95); }
         
         /* Dropdown Styles */
-        .dropdown-item {
-            transition: all 0.3s ease;
-            margin-bottom: 0.5rem;
-        }
-        
+        .dropdown-item { transition: all 0.3s ease; margin-bottom: 0.5rem; }
         .dropdown-header {
             display: flex;
             justify-content: space-between;
@@ -581,53 +502,14 @@
             transition: background-color 0.2s ease;
             padding: 8px 0;
         }
-        
-        .dropdown-header:hover {
-            background: rgba(186,12,47,0);
-        }
-        
-        .dropdown-header:hover .dropdown-arrow {
-            color: #BA0C2F;
-        }
-        
-        .dropdown-header p {
-            margin: 0;
-            color: #333;
-            flex: 1;
-            padding-right: 15px;
-            line-height: 1.3em;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-        
-        .dropdown-arrow {
-            color: #666;
-            transition: transform 0.3s ease, color 0.2s ease;
-            font-size: 0.9em;
-            flex-shrink: 0;
-            line-height: 1.3em;
-            padding-top: 0.2em;
-        }
-        
-        .dropdown-arrow.rotated {
-            transform: rotate(180deg);
-        }
-        
-        .dropdown-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: transparent;
-        }
-        
-        .dropdown-content.open {
-            max-height: 200px;
-        }
-        
-        .dropdown-links {
-            padding: 10px 0;
-        }
-        
+        .dropdown-header:hover { background: rgba(186,12,47,0); }
+        .dropdown-header:hover .dropdown-arrow { color: #BA0C2F; }
+        .dropdown-header p { margin: 0; color: #333; flex: 1; padding-right: 15px; line-height: 1.3em; display: inline-block; transition: color 0.3s ease; }
+        .dropdown-arrow { color: #666; transition: transform 0.3s ease, color 0.2s ease; font-size: 0.9em; flex-shrink: 0; line-height: 1.3em; padding-top: 0.2em; }
+        .dropdown-arrow.rotated { transform: rotate(180deg); }
+        .dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: transparent; }
+        .dropdown-content.open { max-height: 200px; }
+        .dropdown-links { padding: 10px 0; }
         .dropdown-link {
             display: block;
             padding: 8px 20px;
@@ -637,86 +519,52 @@
             transition: all 0.2s ease;
             font-size: 0.95em;
         }
-        
-        .dropdown-link:last-child {
-            margin-bottom: 0;
+        .dropdown-link:last-child { margin-bottom: 0; }
+        .dropdown-link:hover { color: #8B0A24; background: rgba(186,12,47,0); }
+        .dropdown-link i { color: #BA0C2F; width: 16px; font-size: 0.9em; }
+
+        /* --- Gentle attention pulse for the (Expand) title --- */
+        @keyframes ugaPulse {
+            0%, 100% { color: #000; }
+            50%       { color: #BA0C2F; }
         }
-        
-        .dropdown-link:hover {
-            color: #8B0A24;
-            background: rgba(186,12,47,0);
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .nudge { animation: none !important; }
         }
-        
-        .dropdown-link i {
-            color: #BA0C2F;
-            width: 16px;
-            font-size: 0.9em;
+        /* Start after 3s; slow 6s loop; only when collapsed (class .nudge present) */
+        .nudge {
+            animation: ugaPulse 6s ease-in-out 3s infinite;
+            text-shadow: 0 0 0.01px currentColor; /* tiny hint for contrast on some displays */
         }
-        
+        body.dark-mode .nudge {
+            /* keep the same colors but ensure readability on dark bg */
+            text-shadow: 0 0 6px rgba(255,255,255,0.06);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
-            .dark-mode-toggle {
-                top: 15px;
-                right: 15px;
-            }
+            .dark-mode-toggle { top: 15px; right: 15px; }
+            .theme-toggle { gap: 6px; padding: 3px; }
+            .toggle-icon { font-size: 9px; }
+            .toggle-track { width: 28px; height: 14px; }
+            .toggle-thumb { width: 11px; height: 11px; }
+            body.dark-mode .toggle-thumb { transform: translateX(14px); }
 
-            .theme-toggle {
-                gap: 6px;
-                padding: 3px;
-            }
-
-            .toggle-icon {
-                font-size: 9px;
-            }
-
-            .toggle-track {
-                width: 28px;
-                height: 14px;
-            }
-
-            .toggle-thumb {
-                width: 11px;
-                height: 11px;
-            }
-
-            body.dark-mode .toggle-thumb {
-                transform: translateX(14px);
-            }
-
-            .testimonial-content-wrapper.open {
-                max-height: 350px;
-            }
-            
+            .testimonial-content-wrapper.open { max-height: 350px; }
             .testimonial-carousel {
                 height: 300px;
                 flex-direction: column;
                 gap: 15px;
                 align-items: center;
             }
-            
-            .testimonial-container {
-                height: 200px;
-            }
-            
+            .testimonial-container { height: 200px; }
             .carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1em;
-                position: static;
-                transform: none;
+                width: 40px; height: 40px; font-size: 1em; position: static; transform: none;
             }
-            
-            .carousel-btn:hover {
-                transform: scale(1.1);
-            }
-            
-            .carousel-btn:active {
-                transform: scale(0.95);
-            }
-            
-            .testimonial-content {
-                padding: 1rem;
-            }
+            .carousel-btn:hover { transform: scale(1.1); }
+            .carousel-btn:active { transform: scale(0.95); }
+            .testimonial-content { padding: 1rem; }
         }
     </style>
     
@@ -724,13 +572,16 @@
         // Initialize dark mode on page load
         document.addEventListener('DOMContentLoaded', function() {
             initializeDarkMode();
+            // ensure initial label state & nudge are correct on load (collapsed by default)
+            const title = document.getElementById('testimonial-title');
+            title.textContent = 'Student Evaluations (Expand)';
+            title.classList.add('nudge');
         });
 
         function initializeDarkMode() {
             const isDarkMode = JSON.parse(localStorage.getItem('darkMode')) || false;
             const body = document.body;
             const html = document.documentElement;
-            
             if (isDarkMode) {
                 body.classList.add('dark-mode');
                 html.classList.add('dark-mode');
@@ -743,19 +594,16 @@
         function toggleDarkMode() {
             const body = document.body;
             const html = document.documentElement;
-            
             body.classList.toggle('dark-mode');
             html.classList.toggle('dark-mode');
-            
-            // Save preference to localStorage
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+            localStorage.setItem('darkMode', JSON.stringify(body.classList.contains('dark-mode')));
         }
 
-        function toggleDropdown(dropdownId) {
+        // Updated: accept both dropdown & arrow IDs to avoid ID math bugs
+        function toggleDropdown(dropdownId, arrowId) {
             const dropdown = document.getElementById(dropdownId);
-            const arrow = document.getElementById('arrow' + dropdownId.replace('-', ''));
-            
+            const arrow = document.getElementById(arrowId);
+            if (!dropdown || !arrow) return;
             dropdown.classList.toggle('open');
             arrow.classList.toggle('rotated');
         }
@@ -763,13 +611,22 @@
         function toggleTestimonials() {
             const wrapper = document.getElementById('testimonial-wrapper');
             const arrow = document.getElementById('testimonial-arrow');
-            
+            const title = document.getElementById('testimonial-title');
+
             wrapper.classList.toggle('open');
             arrow.classList.toggle('rotated');
-            
-            // Initialize testimonials when opened for the first time
+
             if (wrapper.classList.contains('open')) {
+                // opened → show Collapse, stop the gentle pulse
+                title.textContent = 'Student Evaluations (Collapse)';
+                title.classList.remove('nudge');
                 displayTestimonial();
+            } else {
+                // closed → show Expand, restart the gentle pulse
+                title.textContent = 'Student Evaluations (Expand)';
+                // force reflow to restart animation cleanly
+                void title.offsetWidth;
+                title.classList.add('nudge');
             }
         }
         
@@ -799,20 +656,13 @@
         ];
         
         let currentTestimonial = 0;
-        
         function displayTestimonial() {
             document.getElementById('testimonial-text').textContent = testimonials[currentTestimonial];
         }
-        
         function changeTestimonial(direction) {
             currentTestimonial += direction;
-            
-            if (currentTestimonial >= testimonials.length) {
-                currentTestimonial = 0;
-            } else if (currentTestimonial < 0) {
-                currentTestimonial = testimonials.length - 1;
-            }
-            
+            if (currentTestimonial >= testimonials.length) currentTestimonial = 0;
+            else if (currentTestimonial < 0) currentTestimonial = testimonials.length - 1;
             displayTestimonial();
         }
     </script>
