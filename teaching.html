@@ -42,35 +42,7 @@
     <!-- SECTION: MAIN BODY -->
     <div class="n-article">
         
-        <div class="section-header">
-            <h3>Instructor of Record</h3>
-            <div class="testimonial-header" onclick="toggleTestimonials()">
-                <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
-                <h4 id="testimonial-title">
-                    Student Evaluations <span class="nudge">(Expand)</span>
-                </h4>
-            </div>
-        </div>
-        
-        <!-- Student Testimonials Section -->
-        <div class="testimonials-section">
-            <div class="testimonial-content-wrapper" id="testimonial-wrapper">
-                <div class="testimonial-carousel">
-                    <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="testimonial-container">
-                        <div class="testimonial-content">
-                            <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="testimonial-text" id="testimonial-text"></p>
-                        </div>
-                    </div>
-                    <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <h3>Instructor of Record</h3>
         
         <div class="paper-item dropdown-item">
             <div class="dropdown-header" onclick="toggleDropdown('dropdown1','arrow1')">
@@ -105,6 +77,36 @@
                     <a href="files/Syllabus_ECON2105_Fall23.pdf" class="dropdown-link" target="_blank">
                         Syllabus
                     </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-header">
+            <h3>Student Evaluations</h3>
+            <div class="testimonial-header" onclick="toggleTestimonials()">
+                <i class="fas fa-chevron-down testimonial-arrow" id="testimonial-arrow"></i>
+                <h4 id="testimonial-title">
+                    <span class="nudge">(Expand)</span>
+                </h4>
+            </div>
+        </div>
+        
+        <!-- Student Testimonials Section -->
+        <div class="testimonials-section">
+            <div class="testimonial-content-wrapper" id="testimonial-wrapper">
+                <div class="testimonial-carousel">
+                    <button class="carousel-btn prev-btn" onclick="changeTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-container">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="testimonial-text" id="testimonial-text"></p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn" onclick="changeTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -577,7 +579,7 @@
             initializeDarkMode();
             // ensure initial label state & nudge are correct on load (collapsed by default)
             const title = document.getElementById('testimonial-title');
-            title.textContent = 'Student Evaluations (Expand)';
+            title.textContent = '(Expand)';
             title.classList.add('nudge');
         });
 
@@ -621,12 +623,12 @@
 
             if (wrapper.classList.contains('open')) {
                 // opened → show Collapse, stop the gentle pulse
-                title.textContent = 'Student Evaluations (Collapse)';
+                title.textContent = '(Collapse)';
                 title.classList.remove('nudge');
                 displayTestimonial();
             } else {
                 // closed → show Expand, restart the gentle pulse
-                title.textContent = 'Student Evaluations (Expand)';
+                title.textContent = '(Expand)';
                 // force reflow to restart animation cleanly
                 void title.offsetWidth;
                 title.classList.add('nudge');
