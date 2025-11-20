@@ -187,7 +187,27 @@
     </div>
 
     <style>
-        /* Dark Mode Toggle Switch - Updated Design */
+				/* Scrollable abstract box */
+		.abstract {
+		    max-height: 250px;      /* adjust height if you want more or less space */
+		    overflow-y: auto;       /* enables scroll bar */
+		    padding-right: 10px;    /* room for scrollbar */
+		}
+		
+		/* Optional: nicer scrollbar (Chrome/Edge) */
+		.abstract::-webkit-scrollbar {
+		    width: 6px;
+		}
+		
+		.abstract::-webkit-scrollbar-thumb {
+		    background: #ccc;
+		    border-radius: 3px;
+		}
+		
+		body.dark-mode .abstract::-webkit-scrollbar-thumb {
+		    background: #555;
+		}
+		        /* Dark Mode Toggle Switch - Updated Design */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
